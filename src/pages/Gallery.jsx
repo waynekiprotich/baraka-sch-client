@@ -81,14 +81,9 @@ export default function Gallery() {
 
       <section className="bg-flush">
         <div className="container">
-          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Come See for Yourself</p><h2>Campus tour & virtual tour</h2></Reveal>
-          <div className="grid grid-2 stagger">
+          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Come See for Yourself</p><h2>Virtual tour</h2></Reveal>
+          <div className="grid grid-1 stagger" style={{ maxWidth: '600px', marginInline: 'auto' }}>
             <Reveal className="card" style={{ textAlign: 'center', padding: '44px' }}>
-              <h3>In-Person Campus Tour</h3>
-              <p style={{ marginBottom: '20px' }}>Walk every facility with our admissions team, most weekday mornings.</p>
-              <Link to="/admissions#tour" className="btn btn-primary">Book a Tour</Link>
-            </Reveal>
-            <Reveal className="card" delay={80} style={{ textAlign: 'center', padding: '44px' }}>
               <h3>Virtual Tour</h3>
               <p style={{ marginBottom: '20px' }}>A 360° walkthrough is in production — check back this term.</p>
               <a href="#" className="btn btn-ghost">Notify Me</a>

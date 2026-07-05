@@ -40,7 +40,6 @@ export default function Admissions() {
       <section className="bg-flush section-tight">
         <div className="container hero-cta" style={{ justifyContent: 'center' }}>
           <a href="#apply" className="btn btn-primary">Apply Online</a>
-          <a href="#tour" className="btn btn-ghost">Book a Tour</a>
         </div>
       </section>
 
@@ -50,9 +49,8 @@ export default function Admissions() {
           <div className="steps stagger">
             {[
               ['01', 'Submit Enquiry', 'Fill the online form or visit our admissions office with your query.'],
-              ['02', 'Book a Tour', 'Walk the campus, meet teachers and see a class in session.'],
-              ['03', 'Assessment & Interview', 'A short, friendly placement assessment for the learner and parents.'],
-              ['04', 'Offer & Enrolment', 'Receive your offer letter, pay the deposit, and confirm your place.'],
+              ['02', 'Assessment & Interview', 'A short, friendly placement assessment for the learner and parents.'],
+              ['03', 'Offer & Enrolment', 'Receive your offer letter, pay the deposit, and confirm your place.'],
             ].map(([num, title, body], i) => (
               <Reveal key={num} className="step" delay={i * 80}><span className="num">{num}</span><h4>{title}</h4><p>{body}</p></Reveal>
             ))}
@@ -134,22 +132,6 @@ export default function Admissions() {
               </div>
             </DemoForm>
             <p style={{ textAlign: 'center', marginTop: '14px', fontSize: '.82rem', color: 'var(--ink-40)' }}>Demo form — no data is sent in this build.</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section id="tour" className="bg-flush">
-        <div className="container">
-          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Visit Us</p><h2>Book a school tour</h2></Reveal>
-          <Reveal>
-            <DemoForm className="card-form" style={{ maxWidth: '600px', marginInline: 'auto' }} onSubmitLabel="Tour requested!">
-              <div className="form-grid">
-                <div className="field full"><label htmlFor="tname">Your Name <span className="req">*</span></label><input id="tname" required type="text" /></div>
-                <div className="field"><label htmlFor="tdate">Preferred Date <span className="req">*</span></label><input id="tdate" required type="date" /></div>
-                <div className="field"><label htmlFor="ttime">Preferred Time</label><input id="ttime" type="time" /></div>
-                <div className="field full"><label htmlFor="tphone">Phone Number <span className="req">*</span></label><input id="tphone" required type="tel" /></div>
-              </div>
-            </DemoForm>
           </Reveal>
         </div>
       </section>

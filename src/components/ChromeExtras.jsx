@@ -20,8 +20,7 @@ export function Preloader() {
 export function MobileCta() {
   return (
     <div className="mobile-cta">
-      <Link to="/admissions#apply" className="btn btn-primary">Apply Now</Link>
-      <Link to="/admissions#tour" className="btn btn-ghost">Book Tour</Link>
+      <Link to="/admissions#apply" className="btn btn-primary" style={{ width: '100%' }}>Apply Now</Link>
     </div>
   );
 }

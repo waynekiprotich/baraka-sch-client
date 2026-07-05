@@ -51,7 +51,6 @@ export default function Home() {
           </p>
           <div className="hero-cta" style={{ justifyContent: 'flex-start', marginTop: '2rem', display: 'flex', gap: '1rem' }}>
             <Link to="/admissions#apply" className="btn btn-primary" style={{ backgroundColor: '#f59e0b', color: '#000000', border: 'none', fontWeight: '600', boxShadow: 'none' }}>Apply Now</Link>
-            <Link to="/admissions#tour" className="btn btn-ghost" style={{ color: 'white', borderColor: '#A3A3B5', background: 'transparent' }}>Book a School Tour</Link>
           </div>
         </div>
         <div className="scroll-cue" style={{ zIndex: 2 }}><span>Scroll</span><span className="dot" style={{ backgroundColor: '#f59e0b' }}></span></div>
@@ -459,7 +458,6 @@ export default function Home() {
             <div className="cta-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link to="/admissions#apply" className="btn btn-primary" style={{ backgroundColor: '#4A306D', color: 'white', border: 'none' }}>Apply Online</Link>
               <Link to="/admissions#forms" className="btn btn-secondary" style={{ backgroundColor: '#E8E8EE', color: '#333', border: 'none' }}>Download Forms</Link>
-              <Link to="/admissions#tour" className="btn btn-ghost" style={{ borderColor: '#A3A3B5', color: '#333' }}>Book a Tour</Link>
             </div>
           </Reveal>
         </div>

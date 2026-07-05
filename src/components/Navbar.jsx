@@ -243,12 +243,6 @@ export default function Navbar({ onMenuOpen }) {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Link 
-              to="/admissions#tour" 
-              style={{ whiteSpace: 'nowrap', padding: '8px 16px', fontSize: '0.85rem', borderRadius: '100px', border: `1px solid ${solid && isLightMode ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)'}`, color: textColor, textDecoration: 'none', transition: 'all 0.3s' }}
-            >
-              Book a Tour
-            </Link>
-            <Link 
               to="/admissions#apply" 
               style={{ whiteSpace: 'nowrap', padding: '8px 18px', fontSize: '0.85rem', borderRadius: '100px', backgroundColor: activeGoldColor, color: '#000', fontWeight: 600, textDecoration: 'none', boxShadow: 'none' }}
             >
