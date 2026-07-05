@@ -14,7 +14,7 @@ export default function Academics() {
       content: (
         <div className="grid grid-3 stagger">
           <Reveal className="card"><h3>Grades 1 – 3</h3><p>Play-anchored, competency-based foundations in literacy, numeracy and creative arts.</p></Reveal>
-          <Reveal className="card" delay={60}><h3>Core Focus</h3><p>Language development, environmental activities, and movement &amp; music.</p></Reveal>
+          <Reveal className="card" delay={60}><h3>Core Focus</h3><p>Language development, environmental activities, and movement & music.</p></Reveal>
           <Reveal className="card" delay={120}><h3>Class Size</h3><p>Capped at 24 learners per class, supported by a dedicated class teacher and aide.</p></Reveal>
         </div>
       ),
@@ -33,7 +33,7 @@ export default function Academics() {
       key: 'junior', label: 'Junior School',
       content: (
         <div className="grid grid-3 stagger">
-          <Reveal className="card"><h3>Grades 7 – 9</h3><p>Pathway exploration across STEM, Social Sciences and Arts &amp; Sports Science.</p></Reveal>
+          <Reveal className="card"><h3>Grades 7 – 9</h3><p>Pathway exploration across STEM, Social Sciences and Arts & Sports Science.</p></Reveal>
           <Reveal className="card" delay={60}><h3>Core Focus</h3><p>Career guidance, leadership programmes, and senior-school placement preparation.</p></Reveal>
           <Reveal className="card" delay={120}><h3>Outcomes</h3><p>98% of Baraka Junior School graduates transition to their first-choice senior school.</p></Reveal>
         </div>
@@ -99,8 +99,8 @@ export default function Academics() {
             <p className="eyebrow">Digital Learning</p>
             <h2>Technology as a tool, not a distraction</h2>
             <p>Every classroom is equipped for supervised digital learning — from Grade 4 coding clubs to Junior School research skills — always paired with clear screen-time guidelines.</p>
-            <p>Assessment records, homework and attendance are all tracked digitally and shared with parents through the Parent Portal.</p>
-            <Link to="/parent-portal" className="btn btn-ghost">View Parent Portal</Link>
+            <p>Assessment records, homework and attendance are all tracked digitally to keep parents updated on their child's progress.</p>
+            <Link to="/contact" className="btn btn-ghost">Contact Us for Details</Link>
           </Reveal>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function Academics() {
         <div className="container split">
           <Reveal className="split-body">
             <p className="eyebrow">Planning Ahead</p>
-            <h2>Academic calendar &amp; downloads</h2>
+            <h2>Academic calendar & downloads</h2>
             <p>Term dates, examination schedules and holiday breaks for the current academic year.</p>
             <ul>
               <li><CheckIcon />Term 1 — 6 Jan to 4 Apr</li>

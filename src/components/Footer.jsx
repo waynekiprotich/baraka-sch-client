@@ -43,7 +43,6 @@ export default function Footer() {
             <li><Link to="/admissions#fees">Fees Overview</Link></li>
             <li><Link to="/admissions#faq">FAQs</Link></li>
             <li><Link to="/admissions#forms">Download Forms</Link></li>
-            <li><Link to="/parent-portal">Parent Portal</Link></li>
           </ul>
         </div>
         <div>

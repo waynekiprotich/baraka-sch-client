@@ -10,7 +10,6 @@ const LINKS = [
   { to: '/school-life', label: 'School Life' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/news', label: 'News' },
-  { to: '/parent-portal', label: 'Parents' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -38,7 +37,7 @@ export default function Navbar({ onMenuOpen }) {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => document.addEventListener('mousedown', handleClickOutside);
   }, []);
 
   useEffect(() => {
