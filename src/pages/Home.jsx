@@ -17,7 +17,6 @@ export default function Home() {
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      // Scroll by the width of one testimonial card + the gap (approx 100% of container width)
       const scrollAmount = direction === 'left' ? -current.offsetWidth : current.offsetWidth;
       current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
@@ -25,17 +24,17 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero full-bleed-bg" style={{ minHeight: '80vh', display: 'flex', alignItems: 'flex-end', paddingBottom: '4rem', backgroundColor: '#333339', position: 'relative' }}>
-        <div className="hero-overlay" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(30, 28, 36, 0.65)', zIndex: 1 }}></div>
+      <section className="hero full-bleed-bg" style={{ minHeight: '85vh', display: 'flex', alignItems: 'flex-end', paddingBottom: '5rem', backgroundImage: 'url(https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
+        <div className="hero-overlay" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(30, 24, 48, 0.75)', zIndex: 1 }}></div>
         
         <div className="container hero-content" style={{ position: 'relative', zIndex: 2, textAlign: 'left', maxWidth: '800px', margin: '0', marginLeft: '5%' }}>
-          <p className="eyebrow" style={{ color: '#A3A3B5', fontWeight: '600', letterSpacing: '0.1em' }}>
+          <p className="eyebrow" style={{ color: '#F5A623', fontWeight: '700', letterSpacing: '0.15em' }}>
             CBC · MIXED DAY SCHOOL · KAPSABET, KENYA
           </p>
-          <h1 style={{ color: 'white', fontWeight: '700', lineHeight: '1.1' }}>
+          <h1 style={{ color: 'white', fontWeight: '700', lineHeight: '1.1', fontSize: 'clamp(2.5rem, 5vw, 4.2rem)' }}>
             Welcome to <em>Baraka</em> School Kapsabet
           </h1>
-          <p style={{ color: '#EAEAEA', fontSize: '1.1rem', maxWidth: '600px', marginTop: '1rem' }}>
+          <p style={{ color: '#F3EEFB', fontSize: '1.15rem', maxWidth: '600px', marginTop: '1rem', lineHeight: '1.6' }}>
             A nurturing environment where academic excellence, creativity, leadership and character come together to prepare learners for a successful future.
           </p>
           <div className="hero-cta" style={{ justifyContent: 'flex-start', marginTop: '2rem', display: 'flex', gap: '1rem' }}>
@@ -43,13 +42,13 @@ export default function Home() {
             <Link to="/admissions#tour" className="btn btn-ghost" style={{ color: 'white', borderColor: '#A3A3B5', background: 'transparent' }}>Book a School Tour</Link>
           </div>
         </div>
-        <div className="scroll-cue" style={{ zIndex: 2 }}><span>Scroll</span><span className="dot" style={{ backgroundColor: '#A3A3B5' }}></span></div>
+        <div className="scroll-cue" style={{ zIndex: 2 }}><span>Scroll</span><span className="dot" style={{ backgroundColor: '#f59e0b' }}></span></div>
       </section>
 
       <section className="bg-flush" style={{ padding: '6rem 0' }}>
         <div className="container split">
           <Reveal dir="left" className="split-media">
-            <Tile swatch="p3" className="frame" style={{ minHeight: '550px' }} />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '550px' }} />
           </Reveal>
           <Reveal className="split-body" style={{ paddingLeft: '3rem' }}>
             <p className="eyebrow" style={{ color: '#6A4C93' }}>Our Story</p>
@@ -77,7 +76,7 @@ export default function Home() {
       <section className="bg-tint" style={{ padding: '6rem 0', backgroundColor: '#FAFAFC' }}>
         <div className="container split reverse">
           <Reveal dir="right" className="split-media">
-            <Tile swatch="p2" className="frame" style={{ minHeight: '650px' }} />
+            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '650px' }} />
           </Reveal>
           <Reveal className="split-body" style={{ paddingRight: '3rem' }}>
             <p className="eyebrow" style={{ color: '#6A4C93' }}>Why Baraka</p>
@@ -102,7 +101,7 @@ export default function Home() {
       <section className="bg-flush" style={{ padding: '6rem 0' }}>
         <div className="container split">
           <Reveal dir="left" className="split-media">
-            <Tile swatch="p4" className="frame" style={{ minHeight: '550px' }} />
+            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '550px' }} />
           </Reveal>
           <Reveal className="split-body" style={{ paddingLeft: '3rem' }}>
             <p className="eyebrow" style={{ color: '#6A4C93' }}>Academics</p>
@@ -126,7 +125,7 @@ export default function Home() {
       <section className="bg-tint" style={{ padding: '6rem 0', backgroundColor: '#FAFAFC' }}>
         <div className="container split reverse">
           <Reveal dir="right" className="split-media">
-            <Tile swatch="p6" className="frame" style={{ minHeight: '500px' }} />
+            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '500px' }} />
           </Reveal>
           <Reveal className="split-body" style={{ paddingRight: '3rem' }}>
             <p className="eyebrow" style={{ color: '#6A4C93' }}>Campus & School Life</p>
@@ -196,7 +195,6 @@ export default function Home() {
                     background: '#FFFFFF', 
                     padding: '4rem 2rem', // Generous padding 
                     borderRadius: '8px', 
-                    // No border, relying on white space and subtle shadow if any
                     display: 'flex', 
                     flexDirection: 'column', 
                     alignItems: 'center', 
@@ -251,7 +249,7 @@ export default function Home() {
       <section className="bg-flush" style={{ padding: '6rem 0' }}>
         <div className="container split">
           <Reveal dir="left" className="split-media">
-             <Tile swatch="p1" className="frame" style={{ minHeight: '400px' }} />
+             <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '400px' }} />
           </Reveal>
           
           <Reveal className="split-body" style={{ paddingLeft: '3rem' }}>
@@ -286,7 +284,7 @@ export default function Home() {
       <section className="bg-tint" style={{ padding: '6rem 0', backgroundColor: '#FAFAFC' }}>
         <div className="container split reverse">
           <Reveal dir="right" className="split-media" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-             <Tile swatch="p3" className="frame" style={{ minHeight: '250px' }} />
+             <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '250px' }} />
              <div style={{ background: '#FFFFFF', padding: '2.5rem', borderRadius: '12px', border: '1px solid #E8E8EE' }}>
                 <p className="eyebrow" style={{ color: '#6A4C93' }}>Calendar</p>
                 <h3 style={{ color: '#4A306D', marginBottom: '1.5rem' }}>Upcoming events</h3>

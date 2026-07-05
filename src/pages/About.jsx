@@ -13,7 +13,7 @@ export default function About() {
       <section className="bg-flush">
         <div className="container split">
           <Reveal dir="left" className="split-media">
-            <Tile swatch="p4" className="frame" />
+            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" className="frame" />
             <div className="badge-float"><span className="n">2011</span><p>the year Baraka opened its doors in Kapsabet</p></div>
           </Reveal>
           <Reveal className="split-body">
@@ -59,7 +59,7 @@ export default function About() {
 
       <section className="bg-tint">
         <div className="container split reverse">
-          <Reveal dir="right" className="split-media"><Tile swatch="p5" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
           <Reveal className="split-body">
             <p className="eyebrow">Leadership</p>
             <h2>A message from our Director</h2>
@@ -71,7 +71,7 @@ export default function About() {
 
       <section className="bg-flush">
         <div className="container split">
-          <Reveal dir="left" className="split-media"><Tile swatch="p2" className="frame" /></Reveal>
+          <Reveal dir="left" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
           <Reveal className="split-body">
             <p className="eyebrow">Leadership</p>
             <h2>A message from our Headteacher</h2>
@@ -112,8 +112,11 @@ export default function About() {
         <div className="container">
           <Reveal className="section-head"><p className="eyebrow">Campus in Pictures</p><h2>A glimpse of daily life at Baraka</h2></Reveal>
           <div className="masonry">
-            <Tile swatch="p3" wide /><Tile swatch="p1" tall /><Tile swatch="p6" />
-            <Tile swatch="p4" /><Tile swatch="p2" wide />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" wide />
+            <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" tall />
+            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" />
+            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" />
+            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" wide />
           </div>
         </div>
       </section>

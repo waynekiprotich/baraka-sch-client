@@ -4,12 +4,12 @@ import Tile from '../components/Tile.jsx';
 import PageHero from '../components/PageHero.jsx';
 
 const ARTICLES = [
-  { sw: 'p2', tag: 'Sports', title: 'Athletics team sweeps the county cross-country meet', blurb: 'Baraka runners took gold in four of six age categories.', date: '28 May 2026' },
-  { sw: 'p5', tag: 'Community', title: "Parents' Day 2026: photos and highlights", blurb: 'Over 500 family members joined us for a full day of open classrooms.', date: '14 April 2026' },
-  { sw: 'p6', tag: 'Admissions', title: '2027 intake applications now open', blurb: 'Priority placement closes 30 September for returning families.', date: '2 April 2026' },
-  { sw: 'p1', tag: 'Achievement', title: 'Two learners selected for the National Debate Camp', blurb: 'Grade 8 debaters Faith and Kevin head to Nairobi this July.', date: '20 March 2026' },
-  { sw: 'p4', tag: 'Community', title: 'New computer lab officially opened', blurb: 'Twenty-five new workstations expand our digital learning capacity.', date: '6 March 2026' },
-  { sw: 'p3', tag: 'Sports', title: 'Baraka hosts the Kapsabet Zone athletics trials', blurb: 'Our field hosted eight schools competing for zonal qualification.', date: '19 February 2026' },
+  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Athletics team sweeps the county cross-country meet', blurb: 'Baraka runners took gold in four of six age categories.', date: '28 May 2026' },
+  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: "Parents' Day 2026: photos and highlights", blurb: 'Over 500 family members joined us for a full day of open classrooms.', date: '14 April 2026' },
+  { sw: 'p6', bg: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', tag: 'Admissions', title: '2027 intake applications now open', blurb: 'Priority placement closes 30 September for returning families.', date: '2 April 2026' },
+  { sw: 'p1', bg: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80', tag: 'Achievement', title: 'Two learners selected for the National Debate Camp', blurb: 'Grade 8 debaters Faith and Kevin head to Nairobi this July.', date: '20 March 2026' },
+  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: 'New computer lab officially opened', blurb: 'Twenty-five new workstations expand our digital learning capacity.', date: '6 March 2026' },
+  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Baraka hosts the Kapsabet Zone athletics trials', blurb: 'Our field hosted eight schools competing for zonal qualification.', date: '19 February 2026' },
 ];
 
 const CATS = ['All', 'Achievement', 'Sports', 'Community', 'Admissions'];
@@ -48,7 +48,7 @@ export default function News() {
       <section className="bg-tint section-tight">
         <div className="container">
           <Reveal className="news-feature">
-            <Tile swatch="p3" className="news-thumb" />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" className="news-thumb" />
             <div className="news-body">
               <span className="news-tag">Achievement</span>
               <h3>Baraka learners place first at the Nandi County Science Congress</h3>
@@ -67,7 +67,7 @@ export default function News() {
             <div className="grid grid-3 stagger">
               {filtered.map((a, i) => (
                 <Reveal key={a.title} className="news-card" delay={i * 50}>
-                  <Tile swatch={a.sw} className="news-thumb" />
+                  <Tile swatch={a.sw} bgImage={a.bg} className="news-thumb" />
                   <div className="news-body">
                     <span className="news-tag">{a.tag}</span>
                     <h3>{a.title}</h3>

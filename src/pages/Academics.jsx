@@ -88,13 +88,13 @@ export default function Academics() {
               <li><CheckIcon />Parents briefed each term with a written progress narrative</li>
             </ul>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p6" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
         </div>
       </section>
 
       <section className="bg-tint">
         <div className="container split reverse">
-          <Reveal dir="left" className="split-media"><Tile swatch="p1" className="frame" /></Reveal>
+          <Reveal dir="left" className="split-media"><Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
           <Reveal className="split-body">
             <p className="eyebrow">Digital Learning</p>
             <h2>Technology as a tool, not a distraction</h2>
@@ -130,7 +130,7 @@ export default function Academics() {
             </ul>
             <a href="#" className="btn btn-primary">Download Academic Calendar (PDF)</a>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p4" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
         </div>
       </section>
     </>

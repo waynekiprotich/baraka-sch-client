@@ -12,7 +12,7 @@ export default function SchoolLife() {
         <div className="grid grid-4 stagger">
           <Reveal className="card"><h3>Athletics</h3><p>Track and field, training on the same soil that shaped Olympic champions.</p></Reveal>
           <Reveal className="card" delay={60}><h3>Football</h3><p>Inter-house leagues and county tournaments.</p></Reveal>
-          <Reveal className="card" delay={120}><h3>Volleyball &amp; Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
+          <Reveal className="card" delay={120}><h3>Volleyball & Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
           <Reveal className="card" delay={180}><h3>Swimming Basics</h3><p>Water-safety and beginner swim lessons each term.</p></Reveal>
         </div>
       ),
@@ -70,8 +70,11 @@ export default function SchoolLife() {
         <div className="container">
           <Reveal className="section-head"><p className="eyebrow">Gallery</p><h2>Moments from this term</h2></Reveal>
           <div className="masonry">
-            <Tile swatch="p3" wide /><Tile swatch="p2" tall /><Tile swatch="p5" />
-            <Tile swatch="p1" /><Tile swatch="p6" wide />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" wide />
+            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" tall />
+            <Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" />
+            <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" />
+            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" wide />
           </div>
           <div style={{ textAlign: 'center', marginTop: '36px' }}><Link to="/gallery" className="btn btn-ghost">Open Full Gallery</Link></div>
         </div>

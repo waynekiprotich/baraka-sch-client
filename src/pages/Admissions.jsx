@@ -8,7 +8,6 @@ const CheckIcon = () => <svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><pa
 
 function DemoForm({ children, onSubmitLabel = 'Sent — thank you!', className, style }) {
   const [sent, setSent] = useState(false);
-  const [labelIdx, setLabelIdx] = useState(0);
   const submit = (e) => {
     e.preventDefault();
     setSent(true);
@@ -70,11 +69,11 @@ export default function Admissions() {
               <li><CheckIcon />Completed application form</li>
               <li><CheckIcon />Copy of learner's birth certificate</li>
               <li><CheckIcon />Most recent school report / transfer letter</li>
-              <li><CheckIcon />Immunisation record (Playgroup &amp; Lower Primary)</li>
+              <li><CheckIcon />Immunisation record (Playgroup & Lower Primary)</li>
               <li><CheckIcon />Two passport photos</li>
             </ul>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p2" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
         </div>
       </section>
 
