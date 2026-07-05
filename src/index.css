@@ -22,6 +22,12 @@
   --bg:             #F8F8FC;
   --text:           #222222;
 
+  /* Playful Primary School Accents */
+  --sky-blue:      #38BDF8;
+  --grass-green:   #4ADE80;
+  --coral-pink:    #F87171;
+  --sunny-yellow:  #FBBF24;
+
   /* Derived */
   --purple-04: rgba(91,44,144,.04);
   --purple-08: rgba(91,44,144,.08);
@@ -300,6 +306,35 @@ section{ position:relative; padding:96px 0; }
 
 .card-glass{
   background:var(--glass-bg); backdrop-filter:blur(14px); border:1px solid var(--glass-brd);
+}
+
+/* Playful Primary School Card Accents */
+.playful-card {
+  border-top: 6px solid var(--purple);
+}
+.playful-card.blue { border-top-color: var(--sky-blue); }
+.playful-card.green { border-top-color: var(--grass-green); }
+.playful-card.pink { border-top-color: var(--coral-pink); }
+.playful-card.yellow { border-top-color: var(--sunny-yellow); }
+
+/* Mascot Badge */
+.mascot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--purple-08);
+  padding: 10px 20px;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--purple);
+  margin-bottom: 20px;
+  border: 1px dashed var(--purple-14);
+}
+[data-theme="dark"] .mascot-badge {
+  background: rgba(244, 180, 0, 0.1);
+  color: var(--gold);
+  border-color: rgba(244, 180, 0, 0.2);
 }
 
 /* facility / interactive cards with image-style top */

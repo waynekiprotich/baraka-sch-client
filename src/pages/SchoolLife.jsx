@@ -7,28 +7,47 @@ import PageHero from '../components/PageHero.jsx';
 export default function SchoolLife() {
   const tabs = [
     {
-      key: 'sports', label: 'Sports',
+      key: 'earlyyears', label: 'Early Years (Playgroup & Pre-Primary)',
       content: (
-        <div className="grid grid-4 stagger">
-          <Reveal className="card"><h3>Athletics</h3><p>Track and field, training on the same soil that shaped Olympic champions.</p></Reveal>
-          <Reveal className="card" delay={60}><h3>Football</h3><p>Inter-house leagues and county tournaments.</p></Reveal>
-          <Reveal className="card" delay={120}><h3>Volleyball & Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
-          <Reveal className="card" delay={180}><h3>Swimming Basics</h3><p>Water-safety and beginner swim lessons each term.</p></Reveal>
+        <div className="grid grid-3 stagger">
+          <Reveal className="card playful-card blue">
+            <h3>Play-Based Learning</h3>
+            <p>Sensory play, building blocks, and interactive games that make early literacy and numeracy feel natural and fun.</p>
+          </Reveal>
+          <Reveal className="card playful-card green" delay={60}>
+            <h3>Social Development</h3>
+            <p>Sharing, teamwork, and emotional growth nurtured in a warm, loving classroom environment.</p>
+          </Reveal>
+          <Reveal className="card playful-card pink" delay={120}>
+            <h3>Motor Skills</h3>
+            <p>Clay modeling, finger painting, and outdoor playground games to develop fine and gross motor skills.</p>
+          </Reveal>
         </div>
       ),
     },
     {
-      key: 'clubs', label: 'Clubs',
+      key: 'sports', label: 'Sports & Games',
+      content: (
+        <div className="grid grid-4 stagger">
+          <Reveal className="card playful-card blue"><h3>Athletics</h3><p>Track and field, training on the same soil that shaped Olympic champions.</p></Reveal>
+          <Reveal className="card playful-card green" delay={60}><h3>Football</h3><p>Inter-house leagues and county tournaments.</p></Reveal>
+          <Reveal className="card playful-card pink" delay={120}><h3>Volleyball & Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
+          <Reveal className="card playful-card yellow" delay={180}><h3>Swimming Basics</h3><p>Water-safety and beginner swim lessons each term.</p></Reveal>
+        </div>
+      ),
+    },
+    {
+      key: 'clubs', label: 'Fun Clubs',
       content: (
         <div className="grid grid-4 stagger">
           {[
-            ['STEM Club', 'Robotics, science fairs and the county congress team.'],
-            ['Coding Club', 'Weekly sessions building real, working mini-projects.'],
+            ['Little Explorers', 'Outdoor nature walks, bug hunting, and learning about plants.'],
+            ['Clay Modeling', 'Getting hands messy while sculpting animals and creative shapes.'],
+            ['Puppet Theatre', 'Storytelling, voice acting, and puppet-making to build confidence.'],
+            ['STEM & Coding', 'Weekly sessions building real, working mini-projects and robotics.'],
             ['Scouts', 'Outdoor skills, service projects and badge-work.'],
             ['Debate Society', 'Public speaking and structured argument from Grade 5 up.'],
-            ['Agriculture Club', 'Hands-on farming in the school garden.'],
-            ['Environmental Club', 'Tree-planting, recycling drives and conservation projects.'],
-          ].map(([t, b], i) => <Reveal key={t} className="card" delay={i * 50}><h3>{t}</h3><p>{b}</p></Reveal>)}
+          ].map(([t, b], i) => <Reveal key={t} className="card playful-card green" delay={i * 50}><h3>{t}</h3><p>{b}</p></Reveal>)}
         </div>
       ),
     },
@@ -36,19 +55,9 @@ export default function SchoolLife() {
       key: 'arts', label: 'Music & Drama',
       content: (
         <div className="grid grid-3 stagger">
-          <Reveal className="card"><h3>Music</h3><p>Choir, instrumental lessons and the annual Music Festival.</p></Reveal>
-          <Reveal className="card" delay={60}><h3>Drama</h3><p>Termly productions written and performed by learners.</p></Reveal>
-          <Reveal className="card" delay={120}><h3>Art Studio</h3><p>Open studio time for painting, sculpture and design.</p></Reveal>
-        </div>
-      ),
-    },
-    {
-      key: 'trips', label: 'Trips & Leadership',
-      content: (
-        <div className="grid grid-3 stagger">
-          <Reveal className="card"><h3>Educational Trips</h3><p>Termly excursions tied directly to classroom learning.</p></Reveal>
-          <Reveal className="card" delay={60}><h3>Leadership Programme</h3><p>Prefect body, house captains and peer-mentoring roles.</p></Reveal>
-          <Reveal className="card" delay={120}><h3>Community Service</h3><p>Partnerships with local homes and environmental initiatives.</p></Reveal>
+          <Reveal className="card playful-card pink"><h3>Music & Choir</h3><p>Singing, playing instruments, and performing at the annual Music Festival.</p></Reveal>
+          <Reveal className="card playful-card yellow" delay={60}><h3>Drama & Plays</h3><p>Termly productions written and performed by learners.</p></Reveal>
+          <Reveal className="card playful-card blue" delay={120}><h3>Art Studio</h3><p>Open studio time for painting, sculpture and design.</p></Reveal>
         </div>
       ),
     },
@@ -61,7 +70,7 @@ export default function SchoolLife() {
       </PageHero>
 
       <section className="bg-flush">
-        <div className="container"><Tabs tabs={tabs} defaultKey="sports" /></div>
+        <div className="container"><Tabs tabs={tabs} defaultKey="earlyyears" /></div>
       </section>
 
       <svg className="lane-divider" viewBox="0 0 1200 64" preserveAspectRatio="none"><path className="lane-2" d="M0 40 C300 10 900 10 1200 40" /><path d="M0 50 C300 22 900 22 1200 50" /></svg>

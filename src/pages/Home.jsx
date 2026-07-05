@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal.jsx';
 import Counter from '../components/Counter.jsx';
@@ -11,8 +11,19 @@ const testimonials = [
   { name: 'Emmanuel Kiplagat', role: 'Alumnus, Class of 2019', initials: 'EK', quote: "Everything I lead with today, I first practiced on Baraka's debate stage." },
 ];
 
+const dailySchedule = [
+  { time: '7:30 AM', title: 'Arrival & Morning Devotion', desc: 'A warm welcome at the gate, followed by a cheerful morning song and devotion to start the day with positive values.' },
+  { time: '8:00 AM', title: 'Interactive Learning', desc: 'Hands-on math, reading, and science activities designed to make learning feel like an exciting adventure.' },
+  { time: '10:00 AM', title: 'Healthy Snack & Playtime', desc: 'Fresh fruit, warm milk, and running around our safe, green playground with friends.' },
+  { time: '10:30 AM', title: 'Creative Arts & Music', desc: 'Painting, clay modeling, singing, or playing instruments to let every child’s imagination run wild.' },
+  { time: '12:30 PM', title: 'Nutritious Lunch', desc: 'A delicious, balanced hot meal prepared fresh daily in our school kitchen.' },
+  { time: '1:30 PM', title: 'Outdoor Exploration & Sports', desc: 'Fun physical activities, athletics basics, and exploring our school garden.' },
+  { time: '3:30 PM', title: 'Storytelling & Home Time', desc: 'Reflecting on the day’s blessings, a cozy story circle, and safe departure.' },
+];
+
 export default function Home() {
   const scrollRef = useRef(null);
+  const [activeScheduleIndex, setActiveScheduleIndex] = useState(0);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -28,14 +39,15 @@ export default function Home() {
         <div className="hero-overlay" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(30, 24, 48, 0.75)', zIndex: 1 }}></div>
         
         <div className="container hero-content" style={{ position: 'relative', zIndex: 2, textAlign: 'left', maxWidth: '800px', margin: '0', marginLeft: '5%' }}>
-          <p className="eyebrow" style={{ color: '#F5A623', fontWeight: '700', letterSpacing: '0.15em' }}>
-            CBC · MIXED DAY SCHOOL · KAPSABET, KENYA
-          </p>
+          <div className="mascot-badge">
+            <span style={{ fontSize: '1.2rem' }}>🦁</span>
+            <span>Meet Baraka the Lion Cub — Our School Mascot!</span>
+          </div>
           <h1 style={{ color: 'white', fontWeight: '700', lineHeight: '1.1', fontSize: 'clamp(2.5rem, 5vw, 4.2rem)' }}>
             Welcome to <em>Baraka</em> School Kapsabet
           </h1>
           <p style={{ color: '#F3EEFB', fontSize: '1.15rem', maxWidth: '600px', marginTop: '1rem', lineHeight: '1.6' }}>
-            A nurturing environment where academic excellence, creativity, leadership and character come together to prepare learners for a successful future.
+            A warm, joyful primary school where academic excellence, creative play, leadership, and Christian values come together to nurture future leaders.
           </p>
           <div className="hero-cta" style={{ justifyContent: 'flex-start', marginTop: '2rem', display: 'flex', gap: '1rem' }}>
             <Link to="/admissions#apply" className="btn btn-primary" style={{ backgroundColor: '#f59e0b', color: '#000000', border: 'none', fontWeight: '600', boxShadow: 'none' }}>Apply Now</Link>
@@ -45,7 +57,103 @@ export default function Home() {
         <div className="scroll-cue" style={{ zIndex: 2 }}><span>Scroll</span><span className="dot" style={{ backgroundColor: '#f59e0b' }}></span></div>
       </section>
 
+      {/* PLAYFUL PRIMARY HIGHLIGHTS */}
+      <section className="bg-tint" style={{ padding: '5rem 0' }}>
+        <div className="container">
+          <Reveal className="section-head center" style={{ marginInline: 'auto' }}>
+            <p className="eyebrow" style={{ marginInline: 'auto' }}>Joyful Learning</p>
+            <h2>Designed for curious young minds</h2>
+            <p>We believe primary school should be filled with wonder, discovery, and laughter. Here is how we make every day special:</p>
+          </Reveal>
+          <div className="grid grid-4 stagger">
+            <Reveal className="card playful-card blue">
+              <div className="card-icon" style={{ background: 'var(--sky-blue)' }}>🎨</div>
+              <h3>Creative Arts</h3>
+              <p>Painting, clay modeling, and music are woven into our daily schedule to spark imagination.</p>
+            </Reveal>
+            <Reveal className="card playful-card green" delay={60}>
+              <div className="card-icon" style={{ background: 'var(--grass-green)' }}>🌱</div>
+              <h3>Nature & Play</h3>
+              <p>Our green campus and school garden offer endless opportunities for outdoor exploration.</p>
+            </Reveal>
+            <Reveal className="card playful-card pink" delay={120}>
+              <div className="card-icon" style={{ background: 'var(--coral-pink)' }}>💻</div>
+              <h3>Digital Explorers</h3>
+              <p>Supervised, playful introduction to technology, coding, and digital citizenship.</p>
+            </Reveal>
+            <Reveal className="card playful-card yellow" delay={180}>
+              <div className="card-icon" style={{ background: 'var(--sunny-yellow)' }}>🤝</div>
+              <h3>Values & Character</h3>
+              <p>Christian values, kindness, and leadership are practiced in everything we do.</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERACTIVE DAILY SCHEDULE */}
       <section className="bg-flush" style={{ padding: '6rem 0' }}>
+        <div className="container split">
+          <Reveal dir="left" className="split-body">
+            <p className="eyebrow" style={{ color: '#6A4C93' }}>A Day at Baraka</p>
+            <h2 style={{ color: '#4A306D' }}>What does a typical day look like?</h2>
+            <p style={{ marginBottom: '2rem' }}>Click through our daily schedule to see how we balance structured learning, creative play, and healthy habits.</p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              {dailySchedule.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveScheduleIndex(idx)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '14px 20px',
+                    borderRadius: '12px',
+                    border: '1px solid',
+                    borderColor: activeScheduleIndex === idx ? 'var(--purple)' : 'var(--line)',
+                    background: activeScheduleIndex === idx ? 'var(--purple-04)' : 'transparent',
+                    color: 'var(--text)',
+                    textAlign: 'left',
+                    fontWeight: activeScheduleIndex === idx ? '700' : '500',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <span>{item.time} — {item.title}</span>
+                  <span style={{ color: 'var(--purple)', fontSize: '1.2rem' }}>
+                    {activeScheduleIndex === idx ? '👉' : '•'}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal dir="right" className="split-media" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid var(--line)', boxShadow: 'var(--shadow-lg)', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '8px', background: 'linear-gradient(90deg, var(--sky-blue), var(--grass-green), var(--coral-pink), var(--sunny-yellow))' }}></div>
+              <span style={{ fontSize: '3rem', display: 'block', marginBottom: '1.5rem' }}>
+                {activeScheduleIndex === 0 && '🎒'}
+                {activeScheduleIndex === 1 && '✏️'}
+                {activeScheduleIndex === 2 && '🍎'}
+                {activeScheduleIndex === 3 && '🎨'}
+                {activeScheduleIndex === 4 && '🍲'}
+                {activeScheduleIndex === 5 && '🏃'}
+                {activeScheduleIndex === 6 && '📚'}
+              </span>
+              <span style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--purple)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                {dailySchedule[activeScheduleIndex].time}
+              </span>
+              <h3 style={{ color: '#4A306D', margin: '0.5rem 0 1.5rem 0', fontSize: '1.8rem' }}>
+                {dailySchedule[activeScheduleIndex].title}
+              </h3>
+              <p style={{ color: 'var(--ink-60)', lineHeight: '1.8', fontSize: '1.05rem' }}>
+                {dailySchedule[activeScheduleIndex].desc}
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-tint" style={{ padding: '6rem 0' }}>
         <div className="container split">
           <Reveal dir="left" className="split-media">
             <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" className="frame" style={{ minHeight: '550px' }} />
@@ -70,6 +178,43 @@ export default function Home() {
 
             <Link to="/about" className="btn btn-primary" style={{ backgroundColor: '#4A306D', color: 'white', border: 'none' }}>Read Our Full Story</Link>
           </Reveal>
+        </div>
+      </section>
+
+      {/* CREATIVE CORNER / STUDENT ART SHOWCASE */}
+      <section className="bg-flush" style={{ padding: '6rem 0' }}>
+        <div className="container">
+          <Reveal className="section-head center" style={{ marginInline: 'auto' }}>
+            <p className="eyebrow" style={{ marginInline: 'auto' }}>Creative Corner</p>
+            <h2>Our little artists at work</h2>
+            <p>We celebrate creativity! Here is a showcase of beautiful artwork, crafts, and projects created by our talented primary school learners.</p>
+          </Reveal>
+          <div className="grid grid-3 stagger">
+            <Reveal className="card" style={{ padding: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Student painting" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <div style={{ padding: '24px' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--sky-blue)', textTransform: 'uppercase' }}>Grade 3 Art</span>
+                <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"My Happy Family"</h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ink-60)' }}>A vibrant watercolor painting exploring family bonds and colorful homes.</p>
+              </div>
+            </Reveal>
+            <Reveal className="card" delay={60} style={{ padding: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80" alt="Clay modeling" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <div style={{ padding: '24px' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--grass-green)', textTransform: 'uppercase' }}>Grade 1 Crafts</span>
+                <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"Animals of Nandi County"</h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ink-60)' }}>Hand-sculpted clay animals created during our environmental studies class.</p>
+              </div>
+            </Reveal>
+            <Reveal className="card" delay={120} style={{ padding: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Science project" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <div style={{ padding: '24px' }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--coral-pink)', textTransform: 'uppercase' }}>Grade 5 Science</span>
+                <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"Our Solar System"</h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ink-60)' }}>A creative 3D model of the planets, built entirely from recycled materials.</p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
