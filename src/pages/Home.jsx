@@ -38,9 +38,9 @@ export default function Home() {
           <p style={{ color: '#EAEAEA', fontSize: '1.1rem', maxWidth: '600px', marginTop: '1rem' }}>
             A nurturing environment where academic excellence, creativity, leadership and character come together to prepare learners for a successful future.
           </p>
-          <div className="hero-cta" style={{ justifyContent: 'flex-start', marginTop: '2rem' }}>
-            <Link to="/admissions#apply" className="btn btn-primary" style={{ backgroundColor: '#4A306D', color: 'white', border: 'none' }}>Apply Now</Link>
-            <Link to="/admissions#tour" className="btn btn-ghost" style={{ color: 'white', borderColor: '#A3A3B5' }}>Book a School Tour</Link>
+          <div className="hero-cta" style={{ justifyContent: 'flex-start', marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+            <Link to="/admissions#apply" className="btn btn-primary" style={{ backgroundColor: '#f59e0b', color: '#000000', border: 'none', fontWeight: '600', boxShadow: 'none' }}>Apply Now</Link>
+            <Link to="/admissions#tour" className="btn btn-ghost" style={{ color: 'white', borderColor: '#A3A3B5', background: 'transparent' }}>Book a School Tour</Link>
           </div>
         </div>
         <div className="scroll-cue" style={{ zIndex: 2 }}><span>Scroll</span><span className="dot" style={{ backgroundColor: '#A3A3B5' }}></span></div>

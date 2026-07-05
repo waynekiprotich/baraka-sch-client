@@ -250,7 +250,7 @@ export default function Navbar({ onMenuOpen }) {
             </Link>
             <Link 
               to="/admissions#apply" 
-              style={{ whiteSpace: 'nowrap', padding: '8px 18px', fontSize: '0.85rem', borderRadius: '100px', backgroundColor: activeGoldColor, color: '#000', fontWeight: 600, textDecoration: 'none', boxShadow: '0 0 15px rgba(245, 158, 11, 0.3)' }}
+              style={{ whiteSpace: 'nowrap', padding: '8px 18px', fontSize: '0.85rem', borderRadius: '100px', backgroundColor: activeGoldColor, color: '#000', fontWeight: 600, textDecoration: 'none', boxShadow: 'none' }}
             >
               Apply Now
             </Link>
