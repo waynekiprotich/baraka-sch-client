@@ -1,9 +1,11 @@
-import Reveal from '../components/Reveal.jsx';
-import Counter from '../components/Counter.jsx';
-import Tile from '../components/Tile.jsx';
-import PageHero from '../components/PageHero.jsx';
-import SEO from '../components/SEO.jsx';
-import { Link } from 'react-router-dom';
+"use client";
+
+import Reveal from "../components/Reveal.jsx";
+import Counter from "../components/Counter.jsx";
+import Tile from "../components/Tile.jsx";
+import PageHero from "../components/PageHero.jsx";
+import SEO from "../components/SEO.jsx";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -14,8 +16,8 @@ export default function Home() {
       />
 
       {/* Hero section with left‑aligned text */}
-      <section className="hero" style={{ display: 'flex', justifyContent: 'flex-start' }}>
-        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: 'auto', textAlign: 'left' }}>
+      <section className="hero" style={{ display: "flex", justifyContent: "flex-start" }}>
+        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left" }}>
           <h1>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
@@ -102,7 +104,7 @@ export default function Home() {
           </Reveal>
           <div className="grid grid-4 stagger">
             <Reveal className="card">
-              <div className="card-icon" style={{ background: 'white' }}>
+              <div className="card-icon" style={{ background: "white" }}>
                 🎨
               </div>
               <h3>Creative Arts</h3>
@@ -112,7 +114,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={60}>
-              <div className="card-icon" style={{ background: 'white' }}>
+              <div className="card-icon" style={{ background: "white" }}>
                 🌱
               </div>
               <h3>Nature & Play</h3>
@@ -122,7 +124,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={120}>
-              <div className="card-icon" style={{ background: 'white' }}>
+              <div className="card-icon" style={{ background: "white" }}>
                 💻
               </div>
               <h3>Digital Explorers</h3>
@@ -131,7 +133,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={180}>
-              <div className="card-icon" style={{ background: 'white' }}>
+              <div className="card-icon" style={{ background: "white" }}>
                 🤝
               </div>
               <h3>Values & Character</h3>
@@ -150,7 +152,7 @@ export default function Home() {
             <p className="eyebrow">Join Us</p>
             <h2>Visit, apply, or learn more</h2>
           </Reveal>
-          <div className="hero-cta" style={{ justifyContent: 'center', marginTop: '28px' }}>
+          <div className="hero-cta" style={{ justifyContent: "center", marginTop: "28px" }}>
             <Link to="/admissions#apply" className="btn btn-primary">
               Apply Now
             </Link>
