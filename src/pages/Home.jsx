@@ -187,3 +187,4 @@ export default function Home() {
     </>
   );
 }
+</dyad-chat-summary>
