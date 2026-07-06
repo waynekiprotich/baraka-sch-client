@@ -10,15 +10,15 @@ export default function SchoolLife() {
       key: 'earlyyears', label: 'Early Years (Playgroup & Pre-Primary)',
       content: (
         <div className="grid grid-3 stagger">
-          <Reveal className="card playful-card blue">
+          <Reveal className="card">
             <h3>Play-Based Learning</h3>
             <p>Sensory play, building blocks, and interactive games that make early literacy and numeracy feel natural and fun.</p>
           </Reveal>
-          <Reveal className="card playful-card green" delay={60}>
+          <Reveal className="card" delay={60}>
             <h3>Social Development</h3>
             <p>Sharing, teamwork, and emotional growth nurtured in a warm, loving classroom environment.</p>
           </Reveal>
-          <Reveal className="card playful-card pink" delay={120}>
+          <Reveal className="card" delay={120}>
             <h3>Motor Skills</h3>
             <p>Clay modeling, finger painting, and outdoor playground games to develop fine and gross motor skills.</p>
           </Reveal>
@@ -29,10 +29,10 @@ export default function SchoolLife() {
       key: 'sports', label: 'Sports & Games',
       content: (
         <div className="grid grid-4 stagger">
-          <Reveal className="card playful-card blue"><h3>Athletics</h3><p>Track and field, training on the same soil that shaped Olympic champions.</p></Reveal>
-          <Reveal className="card playful-card green" delay={60}><h3>Football</h3><p>Inter-house leagues and county tournaments.</p></Reveal>
-          <Reveal className="card playful-card pink" delay={120}><h3>Volleyball & Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
-          <Reveal className="card playful-card yellow" delay={180}><h3>Swimming Basics</h3><p>Water-safety and beginner swim lessons each term.</p></Reveal>
+          <Reveal className="card"><h3>Athletics</h3><p>Track and field, training on the same soil that shaped Olympic champions.</p></Reveal>
+          <Reveal className="card" delay={60}><h3>Football</h3><p>Inter-house leagues and county tournaments.</p></Reveal>
+          <Reveal className="card" delay={120}><h3>Volleyball & Netball</h3><p>Competitive teams for Upper Primary and Junior School.</p></Reveal>
+          <Reveal className="card" delay={180}><h3>Swimming Basics</h3><p>Water-safety and beginner swim lessons each term.</p></Reveal>
         </div>
       ),
     },
@@ -47,7 +47,7 @@ export default function SchoolLife() {
             ['STEM & Coding', 'Weekly sessions building real, working mini-projects and robotics.'],
             ['Scouts', 'Outdoor skills, service projects and badge-work.'],
             ['Debate Society', 'Public speaking and structured argument from Grade 5 up.'],
-          ].map(([t, b], i) => <Reveal key={t} className="card playful-card green" delay={i * 50}><h3>{t}</h3><p>{b}</p></Reveal>)}
+          ].map(([t, b], i) => <Reveal key={t} className="card" delay={i * 50}><h3>{t}</h3><p>{b}</p></Reveal>)}
         </div>
       ),
     },
@@ -55,9 +55,9 @@ export default function SchoolLife() {
       key: 'arts', label: 'Music & Drama',
       content: (
         <div className="grid grid-3 stagger">
-          <Reveal className="card playful-card pink"><h3>Music & Choir</h3><p>Singing, playing instruments, and performing at the annual Music Festival.</p></Reveal>
-          <Reveal className="card playful-card yellow" delay={60}><h3>Drama & Plays</h3><p>Termly productions written and performed by learners.</p></Reveal>
-          <Reveal className="card playful-card blue" delay={120}><h3>Art Studio</h3><p>Open studio time for painting, sculpture and design.</p></Reveal>
+          <Reveal className="card"><h3>Music & Choir</h3><p>Singing, playing instruments, and performing at the annual Music Festival.</p></Reveal>
+          <Reveal className="card" delay={60}><h3>Drama & Plays</h3><p>Termly productions written and performed by learners.</p></Reveal>
+          <Reveal className="card" delay={120}><h3>Art Studio</h3><p>Open studio time for painting, sculpture and design.</p></Reveal>
         </div>
       ),
     },
