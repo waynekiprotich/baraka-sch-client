@@ -12,6 +12,7 @@ const Gallery = lazy(() => import('./pages/Gallery.jsx'));
 const News = lazy(() => import('./pages/News.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
+const Error500 = lazy(() => import('./pages/500.jsx'));
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/500" element={<Error500 />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

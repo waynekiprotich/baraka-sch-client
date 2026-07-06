@@ -9,7 +9,7 @@ const ARTICLES = [
   { sw: 'p5', bg: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: "Parents' Day 2026: photos and highlights", blurb: 'Over 500 family members joined us for a full day of open classrooms.', date: '14 April 2026' },
   { sw: 'p6', bg: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', tag: 'Admissions', title: '2027 intake applications now open', blurb: 'Priority placement closes 30 September for returning families.', date: '2 April 2026' },
   { sw: 'p1', bg: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80', tag: 'Achievement', title: 'Two learners selected for the National Debate Camp', blurb: 'Grade 8 debaters Faith and Kevin head to Nairobi this July.', date: '20 March 2026' },
-  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: 'New computer lab officially opened', blurb: 'Twenty-five new workstations expand our digital learning capacity.', date: '60 March 2026' },
+  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: 'New computer lab officially opened', blurb: 'Twenty-five new workstations expand our digital learning capacity.', date: '6 March 2026' },
   { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Baraka hosts the Kapsabet Zone athletics trials', blurb: 'Our field hosted eight schools competing for zonal qualification.', date: '19 February 2026' },
 ];
 
@@ -28,16 +28,16 @@ export default function News() {
   }, [cat, query]);
 
   const newsSchema = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Baraka School Kapsabet News & Announcements",
-    "description": "Latest updates, achievements, sports news, and announcements from Baraka School Kapsabet."
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Baraka School Kapsabet News & Announcements',
+    description: 'Latest updates, achievements, sports news, and announcements from Baraka School Kapsabet.',
   };
 
   return (
     <>
-      <SEO 
-        title="News, Events & Announcements" 
+      <SEO
+        title="News, Events & Announcements"
         description="Stay updated with the latest news, academic achievements, sports victories, and community events from Baraka School Kapsabet."
         schema={newsSchema}
       />
@@ -81,7 +81,7 @@ export default function News() {
             <div className="grid grid-3 stagger">
               {filtered.map((a, i) => (
                 <Reveal key={a.title} className="news-card" delay={i * 50}>
-                  <Tile swatch={a.sw} bgImage={a.bg} className="news-thumb" />
+                  <Tile swatch={a.sw} bgImage={a.bg} className="news-thumb" loading="lazy" />
                   <div className="news-body">
                     <span className="news-tag">{a.tag}</span>
                     <h3>{a.title}</h3>

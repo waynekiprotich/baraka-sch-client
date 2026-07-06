@@ -10,28 +10,39 @@ npm install
 npm run dev       # local dev server
 npm run build     # production build → dist/
 npm run preview   # preview the production build
+npm run lint      # eslint check
+npm run format    # prettier write
 ```
 
 ## Structure
 
-- `src/index.css` — full design system (tokens, components) — same system as the static build
+- `src/index.css` — full design system (tokens, components)
 - `src/components/` — Navbar, MobileMenu, Footer, Layout, Reveal (scroll-in), Counter (animated
   stats), Tabs, Accordion, Testimonials (carousel), Lightbox, Tile (brand-color placeholder for
-  photography), PageHero, ChromeExtras (preloader, WhatsApp FAB, back-to-top, cookie banner)
+  photography), PageHero, ChromeExtras (preloader, WhatsApp FAB, back-to-top, cookie banner),
+  ErrorBoundary (global error catch)
 - `src/pages/` — Home, About, Academics, Admissions, School Life, Gallery, News, Contact,
-  Parent Portal, NotFound
+  Parent Portal, NotFound, 500
 - `src/hooks/useTheme.js` — dark-mode toggle persisted to `localStorage`
+- `src/utils/sanitize.js` — input sanitization helper for demo forms
 - `public/images/` — brand mark (crest) and hero illustration SVGs
+- `public/robots.txt`, `public/sitemap.xml`, `public/manifest.json` — SEO & PWA metadata
+- `vercel.json` / `public/_headers` — security headers & cache policy
+
+## Security
+
+Deploys enforce: Content-Security-Policy, X-Frame-Options: DENY, X-Content-Type-Options: nosniff,
+Referrer-Policy, and Permissions-Policy via `vercel.json` (Vercel) or `public/_headers` (Netlify).
+
+## Deployment
+
+Static build output in `dist/` works on Vercel, Netlify, Cloudflare Pages, and Firebase Hosting.
+All routes SPA-fallback to `index.html` (configured in `vercel.json`; add a `/* /index.html` redirect
+on other hosts).
 
 ## Notes
 
-- Routing is via `react-router-dom` — every page lives under the shared `Layout`, so nav,
-  footer, mobile menu, FAB and cookie banner stay consistent across pages automatically.
-- All forms (application, tour booking, contact, newsletter) are **demo-only** — they show a
-  success state client-side but don't send data anywhere. Wire them to your backend/API of
-  choice by replacing the `onSubmit` handlers.
-- "Photography" throughout is represented with brand-color gradient tiles (`Tile` component)
-  rather than real images — swap the `.tile::before` background in `index.css`, or replace
-  `<Tile>` usages with `<img>` tags, once real photography is available.
+- Routing is via `react-router-dom` — every page lives under the shared `Layout`.
+- All forms are **demo-only** — they show a success state client-side but don't send data anywhere.
+- "Photography" is represented with brand-color gradient tiles (`Tile` component) or Unsplash URLs.
 - Verified with `npm install && npm run build` — production build succeeds with no errors.
-# Baraka_SCH-Frontend

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://barakaschoolkapsabet.ac.ke/sitemap.xml

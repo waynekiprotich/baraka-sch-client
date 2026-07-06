@@ -1,0 +1,17 @@
+{
+  "name": "Baraka School Kapsabet",
+  "short_name": "Baraka School",
+  "description": "Nurturing Excellence, Character & Future Leaders in Kapsabet, Nandi County.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14101E",
+  "theme_color": "#5B2C90",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

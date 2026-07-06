@@ -4,6 +4,7 @@ import Tile from '../components/Tile.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SEO from '../components/SEO.jsx';
+import { sanitizeText, sanitizeEmail } from '../utils/sanitize.js';
 
 const CheckIcon = () => <svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M9 11l3 3 8-8" /></svg>;
 
@@ -11,8 +12,14 @@ function DemoForm({ children, onSubmitLabel = 'Sent — thank you!', className, 
   const [sent, setSent] = useState(false);
   const submit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    // Sanitize all text inputs before any (demo) processing
+    const textInputs = form.querySelectorAll('input[type="text"], textarea');
+    textInputs.forEach((el) => { el.value = sanitizeText(el.value); });
+    const emailInputs = form.querySelectorAll('input[type="email"]');
+    emailInputs.forEach((el) => { el.value = sanitizeEmail(el.value); });
     setSent(true);
-    e.target.reset();
+    form.reset();
     setTimeout(() => setSent(false), 2600);
   };
   return (
@@ -34,22 +41,22 @@ export default function Admissions() {
   ];
 
   const admissionsSchema = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Baraka School Kapsabet Admissions",
-    "description": "Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.",
-    "offers": {
-      "@type": "Offer",
-      "category": "Education",
-      "priceCurrency": "KES",
-      "description": "Termly tuition fees starting from KES 28,000"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Baraka School Kapsabet Admissions',
+    description: 'Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.',
+    offers: {
+      '@type': 'Offer',
+      category: 'Education',
+      priceCurrency: 'KES',
+      description: 'Termly tuition fees starting from KES 28,000',
+    },
   };
 
   return (
     <>
-      <SEO 
-        title="Admissions, Fees & Requirements" 
+      <SEO
+        title="Admissions, Fees & Requirements"
         description="Learn how to apply to Baraka School Kapsabet. View our termly fee structure, admission requirements, and start your online application."
         schema={admissionsSchema}
       />
@@ -91,7 +98,7 @@ export default function Admissions() {
               <li><CheckIcon />Two passport photos</li>
             </ul>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" className="frame" loading="lazy" /></Reveal>
         </div>
       </section>
 
