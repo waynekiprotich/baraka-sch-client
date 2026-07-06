@@ -8,15 +8,14 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <>
-      {/* Corrected SEO component with valid attributes */}
       <SEO 
         title="Home" 
         description="Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum." 
       />
 
-      {/* Hero section with illustration */}
+      {/* Hero section with left‑aligned text */}
       <section className="hero">
-        <div className="hero-content container">
+        <div className="hero-content container text-left">
           <h1>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
@@ -25,7 +24,7 @@ export default function Home() {
             expectations when they feel truly known.
           </p>
           <div className="hero-cta">
-            {/* Removed the Apply Now button as requested */}
+            {/* Only Contact Us button remains in hero CTA */}
             <Link to="/contact" className="btn btn-ghost">
               Contact Us
             </Link>
