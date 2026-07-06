@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
 import Tabs from '../components/Tabs.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SEO from '../components/SEO.jsx';
 
 export default function SchoolLife() {
   const tabs = [
@@ -63,8 +64,38 @@ export default function SchoolLife() {
     },
   ];
 
+  const schoolLifeSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Co-curricular Activities & Clubs",
+    "description": "Explore the vibrant school life at Baraka School Kapsabet, including sports, music, drama, and fun clubs.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Athletics & Sports"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "STEM & Coding Club"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Music & Drama"
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO 
+        title="School Life, Clubs & Sports" 
+        description="Discover co-curricular activities, sports, and clubs at Baraka School Kapsabet. From athletics to STEM coding and music."
+        schema={schoolLifeSchema}
+      />
+
       <PageHero crumb="School Life" title="Where talents get discovered">
         Twelve clubs, competitive sports and a performing-arts programme that runs all year — Kapsabet's running heritage runs in our blood too.
       </PageHero>

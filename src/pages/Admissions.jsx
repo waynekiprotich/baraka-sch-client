@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SEO from '../components/SEO.jsx';
 
 const CheckIcon = () => <svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M9 11l3 3 8-8" /></svg>;
 
@@ -32,8 +33,27 @@ export default function Admissions() {
     { q: 'Is transport available from my area?', a: 'Our school buses cover most routes within Kapsabet town and the surrounding trading centres — contact admissions to confirm your specific route.' },
   ];
 
+  const admissionsSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Baraka School Kapsabet Admissions",
+    "description": "Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.",
+    "offers": {
+      "@type": "Offer",
+      "category": "Education",
+      "priceCurrency": "KES",
+      "description": "Termly tuition fees starting from KES 28,000"
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Admissions, Fees & Requirements" 
+        description="Learn how to apply to Baraka School Kapsabet. View our termly fee structure, admission requirements, and start your online application."
+        schema={admissionsSchema}
+      />
+
       <PageHero crumb="Admissions" title="Begin your child's Baraka journey">
         Places for Playgroup through Grade 9 are open for the 2027 intake. Here's everything you need to apply with confidence.
       </PageHero>

@@ -4,6 +4,7 @@ import Tile from '../components/Tile.jsx';
 import Lightbox from '../components/Lightbox.jsx';
 import PageHero from '../components/PageHero.jsx';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO.jsx';
 
 const ALL_ITEMS = [
   { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Junior School science fair', cat: 'academics' },
@@ -31,8 +32,21 @@ export default function Gallery() {
 
   const items = cat === 'all' ? ALL_ITEMS : ALL_ITEMS.filter((i) => i.cat === cat);
 
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Baraka School Kapsabet Photo Gallery",
+    "description": "A visual tour of campus life, classrooms, sports fields, and events at Baraka School Kapsabet."
+  };
+
   return (
     <>
+      <SEO 
+        title="Campus Photo Gallery" 
+        description="Take a visual tour of Baraka School Kapsabet. Explore photos of our modern classrooms, sports fields, science fairs, and campus events."
+        schema={gallerySchema}
+      />
+
       <PageHero crumb="Gallery" title="Campus life, in pictures">
         A look inside classrooms, sports fields and celebrations throughout the school year.
       </PageHero>

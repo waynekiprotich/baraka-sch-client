@@ -2,10 +2,29 @@ import Reveal from '../components/Reveal.jsx';
 import Counter from '../components/Counter.jsx';
 import Tile from '../components/Tile.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SEO from '../components/SEO.jsx';
 
 export default function About() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Baraka School Kapsabet",
+    "description": "Learn about the history, mission, vision, and core values of Baraka School Kapsabet, founded in 2011 in Nandi County.",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Baraka School Kapsabet",
+      "logo": `${window.location.origin}/images/logo.svg`
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Our History, Mission & Values" 
+        description="Discover the story of Baraka School Kapsabet. Founded in 2011 by educators to nurture confident, principled learners in Nandi County."
+        schema={aboutSchema}
+      />
+
       <PageHero crumb="About" title="Fifteen years of nurturing character alongside excellence">
         Baraka School Kapsabet was built on the belief that children rise to meet high expectations when they feel truly known.
       </PageHero>
@@ -114,7 +133,7 @@ export default function About() {
           <div className="masonry">
             <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" wide />
             <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" tall />
-            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" />
+            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" />
             <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" />
             <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" wide />
           </div>

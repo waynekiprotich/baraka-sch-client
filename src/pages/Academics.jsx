@@ -4,6 +4,7 @@ import Counter from '../components/Counter.jsx';
 import Tile from '../components/Tile.jsx';
 import Tabs from '../components/Tabs.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SEO from '../components/SEO.jsx';
 
 const CheckIcon = () => <svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M9 11l3 3 8-8" /></svg>;
 
@@ -52,8 +53,22 @@ export default function Academics() {
     ['Religious Education', 'Christian values integrated with academic life.'],
   ];
 
+  const academicsSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalProcedure",
+    "name": "CBC Curriculum Pathways",
+    "description": "Full CBC pathways from Playgroup through Junior School, backed by continuous assessment and modern digital learning.",
+    "educationalLevel": ["Primary School", "Junior Secondary School"]
+  };
+
   return (
     <>
+      <SEO 
+        title="CBC Curriculum & Academic Programs" 
+        description="Explore our CBC curriculum pathways from Playgroup to Junior School. Small class sizes, digital learning, and continuous assessment."
+        schema={academicsSchema}
+      />
+
       <PageHero crumb="Academics" title="A curriculum built for how children actually learn">
         Full CBC pathways from Playgroup through Junior School, backed by continuous assessment and modern digital learning.
       </PageHero>

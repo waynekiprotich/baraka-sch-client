@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal.jsx';
 import Counter from '../components/Counter.jsx';
 import Tile from '../components/Tile.jsx';
+import SEO from '../components/SEO.jsx';
 
 const testimonials = [
   { name: 'Mercy Sang', role: 'Head of Sciences', initials: 'MS', quote: "I've taught in three counties. Baraka's culture of mentorship is genuinely rare." },
@@ -33,8 +34,36 @@ export default function Home() {
     }
   };
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Baraka School Kapsabet",
+    "url": window.location.origin,
+    "logo": `${window.location.origin}/images/logo.svg`,
+    "description": "A premium mixed day school nurturing academic excellence, character, and future leaders in Kapsabet, Nandi County.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kapsabet–Eldoret Road",
+      "addressLocality": "Kapsabet",
+      "addressRegion": "Nandi County",
+      "addressCountry": "KE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254-700-123-456",
+      "contactType": "Admissions",
+      "email": "info@barakaschoolkapsabet.ac.ke"
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Nurturing Excellence, Character & Future Leaders" 
+        description="Welcome to Baraka School Kapsabet. A warm, joyful primary school where academic excellence, creative play, leadership, and Christian values come together."
+        schema={homeSchema}
+      />
+
       <section className="hero full-bleed-bg" style={{ minHeight: '85vh', display: 'flex', alignItems: 'flex-end', paddingBottom: '5rem', backgroundImage: 'url(https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
         <div className="hero-overlay" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(30, 24, 48, 0.75)', zIndex: 1 }}></div>
         
@@ -185,7 +214,7 @@ export default function Home() {
           </Reveal>
           <div className="grid grid-3 stagger">
             <Reveal className="card" style={{ padding: 0, overflow: 'hidden' }}>
-              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Student painting" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Student painting" loading="lazy" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '24px' }}>
                 <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--sky-blue)', textTransform: 'uppercase' }}>Grade 3 Art</span>
                 <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"My Happy Family"</h3>
@@ -193,7 +222,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal className="card" delay={60} style={{ padding: 0, overflow: 'hidden' }}>
-              <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80" alt="Clay modeling" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=600&q=80" alt="Clay modeling" loading="lazy" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '24px' }}>
                 <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--grass-green)', textTransform: 'uppercase' }}>Grade 1 Crafts</span>
                 <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"Animals of Nandi County"</h3>
@@ -201,7 +230,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal className="card" delay={120} style={{ padding: 0, overflow: 'hidden' }}>
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Science project" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Science project" loading="lazy" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '24px' }}>
                 <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--coral-pink)', textTransform: 'uppercase' }}>Grade 5 Science</span>
                 <h3 style={{ fontSize: '1.2rem', margin: '8px 0' }}>"Our Solar System"</h3>

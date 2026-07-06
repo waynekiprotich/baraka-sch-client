@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
+import SEO from '../components/SEO.jsx';
 
 export default function Contact() {
   const faqItems = [
@@ -11,8 +12,44 @@ export default function Contact() {
     { q: 'Who do I contact in an emergency?', a: 'Call the emergency line listed below — it is monitored around the clock, including weekends and holidays.' },
   ];
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Baraka School Kapsabet",
+    "image": `${window.location.origin}/images/logo.svg`,
+    "telephone": "+254-700-123-456",
+    "email": "info@barakaschoolkapsabet.ac.ke",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kapsabet–Eldoret Road",
+      "addressLocality": "Kapsabet",
+      "addressRegion": "Nandi County",
+      "addressCountry": "KE"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "07:30",
+        "closes": "17:00"
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO 
+        title="Contact Us & Location" 
+        description="Get in touch with Baraka School Kapsabet. Find our phone number, email, WhatsApp contact, office hours, and campus location on Kapsabet–Eldoret Road."
+        schema={contactSchema}
+      />
+
       <PageHero crumb="Contact" title="We'd love to hear from you">
         Visit, call, WhatsApp or send a message — our admissions and front-office team responds within one working day.
       </PageHero>
