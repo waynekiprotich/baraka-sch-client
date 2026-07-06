@@ -154,7 +154,7 @@ export default function Home() {
             <Link to="/admissions#apply" className="btn btn-primary">
               Apply Now
             </Link>
-            <Link to="/contact" className="btn btn-secondary">
+            <Link to="/contact" className="btn btn-secondary text-black">
               Contact Us
             </Link>
           </div>
