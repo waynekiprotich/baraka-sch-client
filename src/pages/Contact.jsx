@@ -5,15 +5,6 @@ import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-
-  const submit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    e.target.reset();
-    setTimeout(() => setSent(false), 2800);
-  };
-
   const faqItems = [
     { q: 'What are your office hours?', a: 'Monday to Friday, 7:30am – 5:00pm. Saturday mornings by appointment during term time.' },
     { q: "What's the fastest way to reach the school?", a: 'WhatsApp or phone during office hours gets the quickest response — the contact form is best for non-urgent enquiries.' },
@@ -60,29 +51,6 @@ export default function Contact() {
           <Reveal className="card" delay={160}>
             <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1L21 3l-1 3.6a8.46 8.46 0 0 1 1 4.9z" stroke="currentColor" /></svg></div>
             <h3>WhatsApp</h3><p>Fastest for quick questions.<br />+254 700 123 456</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-flush">
-        <div className="container">
-          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Send a Message</p><h2>Get in touch</h2></Reveal>
-          <Reveal className="card-form" style={{ maxWidth: '820px', marginInline: 'auto' }} as="form" onSubmit={submit}>
-            <div className="form-grid">
-              <div className="field"><label htmlFor="cname">Full Name <span className="req">*</span></label><input id="cname" required type="text" /></div>
-              <div className="field"><label htmlFor="cemail">Email Address <span className="req">*</span></label><input id="cemail" required type="email" /></div>
-              <div className="field"><label htmlFor="cphone">Phone Number</label><input id="cphone" type="tel" /></div>
-              <div className="field">
-                <label htmlFor="creason">Reason for Contact <span className="req">*</span></label>
-                <select id="creason" required defaultValue="">
-                  <option value="" disabled>Select a reason</option>
-                  <option>Admissions Enquiry</option><option>General Question</option><option>Feedback</option><option>Media / Press</option><option>Other</option>
-                </select>
-              </div>
-              <div className="field full"><label htmlFor="cmsg">Message <span className="req">*</span></label><textarea id="cmsg" required placeholder="How can we help?"></textarea></div>
-            </div>
-            <button type="submit" className="btn btn-primary btn-block" style={{ marginTop: '24px' }} disabled={sent}>{sent ? 'Message sent — thank you!' : 'Send Message'}</button>
-            <p style={{ textAlign: 'center', marginTop: '14px', fontSize: '.82rem', color: 'var(--ink-40)' }}>Demo form — no data is sent in this build.</p>
           </Reveal>
         </div>
       </section>
