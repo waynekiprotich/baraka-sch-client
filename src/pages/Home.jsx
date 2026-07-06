@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <>
-      <SEO
-        title="Home"
-        ="Home"
-        description="Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum."
+      {/* Corrected SEO component with valid attributes */}
+      <SEO 
+        title="Home" 
+        description="Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum." 
       />
 
-      {/* Hero section with illustration on the right */}
+      {/* Hero section with illustration */}
       <section className="hero">
         <div className="hero-content container">
           <h1>
@@ -33,7 +33,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* Illustration positioned on the right via CSS */}
+        {/* Illustration positioned via CSS */}
         <img
           src="/images/hero-illustration.svg"
           alt="Baraka School illustration"
