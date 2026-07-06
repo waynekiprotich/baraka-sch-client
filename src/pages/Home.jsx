@@ -122,9 +122,8 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal dir="right" className="split-media" style={{ display: 'flex', flexDirection: 'column', justifycontent: 'center' }}>
+          <Reveal dir="right" className="split-media" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid var(--line)', boxShadow: 'var(--shadow-lg)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '8px', background: 'linear-gradient(90deg, var(--sky-blue), var(--grass-green), var(--coral-pink), var(--sunny-yellow))' }}></div>
               <span style={{ fontSize: '3rem', display: 'block', marginBottom: '1.5rem' }}>
                 {activeScheduleIndex === 0 && '🎒'}
                 {activeScheduleIndex === 1 && '✏️'}
