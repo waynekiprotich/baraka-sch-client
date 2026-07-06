@@ -5,19 +5,19 @@ import { NavLink, Link } from "react-router-dom";
 import useTheme from "../hooks/useTheme.js";
 import "./../styles/navbar.css";
 
-const LINKS = [
+const PRIMARY_LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/academics", label: "Academics" },
   { to: "/admissions", label: "Admissions" },
   { to: "/school-life", label: "School Life" },
+];
+
+const SECONDARY_LINKS = [
   { to: "/gallery", label: "Gallery" },
   { to: "/news", label: "News" },
   { to: "/contact", label: "Contact" },
 ];
-
-const PRIMARY_LINKS = LINKS.slice(0, 5);
-const SECONDARY_LINKS = LINKS.slice(5);
 
 export default function Navbar({ onMenuOpen }) {
   const [solid, setSolid] = useState(false);
