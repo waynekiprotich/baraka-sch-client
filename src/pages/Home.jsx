@@ -25,7 +25,7 @@ export default function Home() {
           </p>
           <div className="hero-cta">
             {/* Only Contact Us button remains in hero CTA */}
-            <Link to="/contact" className="btn btn-ghost">
+            <Link to="/contact" className="btn btn-secondary text-black">
               Contact Us
             </Link>
           </div>
