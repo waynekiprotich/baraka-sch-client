@@ -25,9 +25,7 @@ export default function Home() {
             expectations when they feel truly known.
           </p>
           <div className="hero-cta">
-            <Link to="/admissions#apply" className="btn btn-primary">
-              Apply Now
-            </Link>
+            {/* Removed the Apply Now button as requested */}
             <Link to="/contact" className="btn btn-ghost">
               Contact Us
             </Link>
