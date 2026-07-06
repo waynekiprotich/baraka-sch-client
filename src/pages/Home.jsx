@@ -16,30 +16,8 @@ export default function Home() {
       />
 
       {/* Hero section with left‑aligned text */}
-      <section 
-        className="hero" 
-        style={{ 
-          display: "flex", 
-          justifyContent: "flex-start",
-          backgroundImage: "url('/images/students-hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          position: "relative",
-        }}
-      >
-        <div 
-          className="hero-overlay" 
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.4)",
-          }}
-        />
-        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left", position: "relative", zIndex: 1 }}>
+      <section className="hero" style={{ display: "flex", justifyContent: "flex-start" }}>
+        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left" }}>
           <h1>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
@@ -187,4 +165,3 @@ export default function Home() {
     </>
   );
 }
-</dyad-chat-summary>
