@@ -614,8 +614,8 @@ section { position: relative; padding: 96px 0; }
   .dash-cards { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 860px) {
-  .nav-links, .nav-actions .icon-btn.search-desktop { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-links, .nav-actions .search-desktop, .nav-actions .apply-desktop { display: none !important; }
+  .nav-toggle { display: flex !important; }
   .grid-3 { grid-template-columns: repeat(2,1fr); }
   .hero-illustration { display: none; }
   .dash-shell { grid-template-columns: 1fr; }

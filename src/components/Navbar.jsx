@@ -87,7 +87,7 @@ export default function Navbar({ onMenuOpen }) {
           </span>
         </Link>
 
-        <nav className="nav-links" aria-label="Primary" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <nav className="nav-links" aria-label="Primary" style={{ alignItems: 'center', gap: '6px' }}>
           {PRIMARY_LINKS.map((l) => (
             <NavLink 
               key={l.to} 
@@ -217,11 +217,11 @@ export default function Navbar({ onMenuOpen }) {
 
         <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0 }}>
           
-          <button aria-label="Search the site" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, display: 'flex', alignItems: 'center', padding: '8px', transition: 'color 0.3s' }}>
+          <button className="search-desktop" aria-label="Search the site" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', padding: '0', transition: 'color 0.3s' }}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
           </button>
 
-          <button aria-label="Toggle dark mode" onClick={toggle} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, display: 'flex', alignItems: 'center', padding: '8px', transition: 'color 0.3s' }}>
+          <button aria-label="Toggle dark mode" onClick={toggle} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', padding: '0', transition: 'color 0.3s' }}>
             {isLightMode ? (
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -241,7 +241,7 @@ export default function Navbar({ onMenuOpen }) {
             )}
           </button>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="apply-desktop" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Link 
               to="/admissions#apply" 
               style={{ whiteSpace: 'nowrap', padding: '8px 18px', fontSize: '0.85rem', borderRadius: '100px', backgroundColor: activeGoldColor, color: '#000', fontWeight: 600, textDecoration: 'none', boxShadow: 'none' }}
@@ -250,7 +250,7 @@ export default function Navbar({ onMenuOpen }) {
             </Link>
           </div>
 
-          <button aria-label="Open menu" aria-expanded="false" onClick={onMenuOpen} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, padding: '8px', transition: 'color 0.3s' }} className="nav-toggle">
+          <button aria-label="Open menu" aria-expanded="false" onClick={onMenuOpen} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: textColor, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', padding: '0', transition: 'color 0.3s' }} className="nav-toggle">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
           </button>
 
