@@ -1,0 +1,13 @@
+/* Mobile navigation toggle - only visible on small screens */
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide the toggle button on larger screens (desktop) */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+}
