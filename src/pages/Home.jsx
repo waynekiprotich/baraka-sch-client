@@ -14,8 +14,8 @@ export default function Home() {
       />
 
       {/* Hero section with left‑aligned text */}
-      <section className="hero">
-        <div className="hero-content container text-left">
+      <section className="hero" style={{ display: 'flex', justifyContent: 'flex-start' }}>
+        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: 'auto', textAlign: 'left' }}>
           <h1>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
