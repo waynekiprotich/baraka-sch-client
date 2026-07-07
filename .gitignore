@@ -1,1 +1,41 @@
-.dyad/
+# Baraka School Kapsabet - .gitignore
+# Exclude build artifacts and sensitive files
+
+# Node.js build artifacts
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# OS-specific files
+.DS_Store
+*.DS_Store
+
+# Coverage reports
+**/coverage/**
+
+# IDE/sandbox files
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+*.vscode/settings.json
+
+# Logs and temporary files
+logs/
+tmp/
+*.log
+
+# Build tools
+yarn.lock
+package-lock.json
+.pkg.json
+*.map
+
+# Test artifacts
+__tests__/
+coverage/
+*.spec.js
+*.test.js
