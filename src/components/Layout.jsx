@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import Navbar from './Navbar.jsx';
 import MobileMenu from './MobileMenu.jsx';
 import Footer from './Footer.jsx';
@@ -13,8 +12,10 @@ export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!location.hash) window.scrollTo({ top: 0 });
-  }, [location.pathname]);
+    if (!location.hash) {
+      window.scrollTo({ top: 0 });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <>

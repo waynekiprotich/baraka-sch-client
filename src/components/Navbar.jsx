@@ -3,7 +3,6 @@
 import { useEffect, useState, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import useTheme from "../hooks/useTheme.js";
-import "./../styles/navbar.css";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -16,10 +15,10 @@ const LINKS = [
   { to: "/contact", label: "Contact" },
 ];
 
-export { LINKS };
-
 const PRIMARY_LINKS = LINKS.slice(0, 5);
 const SECONDARY_LINKS = LINKS.slice(5);
+
+export { LINKS };
 
 export default function Navbar({ onMenuOpen }) {
   const [solid, setSolid] = useState(false);

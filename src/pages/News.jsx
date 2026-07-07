@@ -1,8 +1,11 @@
+"use client";
+
 import { useMemo, useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SEO from '../components/SEO.jsx';
+import { Link } from 'react-router-dom';
 
 const ARTICLES = [
   { sw: 'p2', bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Athletics team sweeps the county cross-country meet', blurb: 'Baraka runners took gold in four of six age categories.', date: '28 May 2026' },

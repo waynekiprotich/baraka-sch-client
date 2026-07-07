@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
@@ -13,7 +15,6 @@ function DemoForm({ children, onSubmitLabel = 'Sent — thank you!', className, 
   const submit = (e) => {
     e.preventDefault();
     const form = e.target;
-    // Sanitize all text inputs before any (demo) processing
     const textInputs = form.querySelectorAll('input[type="text"], textarea');
     textInputs.forEach((el) => { el.value = sanitizeText(el.value); });
     const emailInputs = form.querySelectorAll('input[type="email"]');

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
@@ -86,7 +88,7 @@ export default function Gallery() {
           <Reveal dir="right" className="split-media">
             <div className="frame tile p3" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div style={{ width: '70px', height: '70px', borderRadius: '50%', background: 'rgba(255,255,255,.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1 }}>
-                <svg width="26" viewBox="0 0 24 24" fill="var(--purple)"><polygon points="6 4 20 12 6 20" /></svg>
+                <svg width="26" viewBox="0 0 24 24" fill="var(--purple)"><polygon points="6 4 20 12 6 20 6 4" /></svg>
               </div>
             </div>
           </Reveal>

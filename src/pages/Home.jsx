@@ -5,7 +5,7 @@ import Counter from "../components/Counter.jsx";
 import Tile from "../components/Tile.jsx";
 import PageHero from "../components/PageHero.jsx";
 import SEO from "../components/SEO.jsx";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -22,8 +22,7 @@ export default function Home() {
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
           <p>
-            Baraka School Kapsabet was built on the belief that children rise to meet high
-            expectations when they feel truly known.
+            Baraka School Kapsabet was built on the belief that children rise to meet high expectations when they feel truly known.
           </p>
           <div className="hero-cta">
             {/* Only Contact Us button remains in hero CTA */}
@@ -62,7 +61,7 @@ export default function Home() {
             </div>
             <div className="stat-cell">
               <Counter target={98} suffix="%" />
-              <span>KCPE Transition Rate</span>
+              <span>KCPE Mean Transition</span>
             </div>
           </Reveal>
         </div>
@@ -100,7 +99,7 @@ export default function Home() {
         <div className="container">
           <Reveal className="section-head">
             <p className="eyebrow">Early Years Foundation</p>
-            <h2>Playgroup to Pre‑Primary (Ages 2‑5)</h2>
+            <h2>Playgroup to Pre-Primary (Ages 2-5)</h2>
           </Reveal>
           <div className="grid grid-4 stagger">
             <Reveal className="card">
@@ -153,9 +152,7 @@ export default function Home() {
             <h2>Visit, apply, or learn more</h2>
           </Reveal>
           <div className="hero-cta" style={{ justifyContent: "center", marginTop: "28px" }}>
-            <Link to="/admissions#apply" className="btn btn-primary">
-              Apply Now
-            </Link>
+            <Link to="/admissions#apply" className="btn btn-primary">Apply Online</Link>
             <Link to="/contact" className="btn btn-secondary" style={{ color: "#000" }}>
               Contact Us
             </Link>

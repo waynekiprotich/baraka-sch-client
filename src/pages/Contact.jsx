@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
@@ -82,11 +84,11 @@ export default function Contact() {
             <h3>Office Hours</h3><p>Mon – Fri, 7:30am – 5:00pm.<br />Saturday mornings by appointment.</p>
           </Reveal>
           <Reveal className="card" delay={80}>
-            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" stroke="currentColor" /></svg></div>
+            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6a1 1 0 0 1 1-1h3z" stroke="currentColor" /></svg></div>
             <h3>Emergency Contact</h3><p>+254 700 999 111<br />Answered 24/7, including holidays.</p>
           </Reveal>
           <Reveal className="card" delay={160}>
-            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M21 11.5a8.5 8.5 0 1 1-3.8-7.1L21 3l-1 3.6a8.46 8.46 0 0 1 1 4.9z" stroke="currentColor" /></svg></div>
+            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke="currentColor" /><circle cx="12" cy="10" r="3" stroke="currentColor" /></svg></div>
             <h3>WhatsApp</h3><p>Fastest for quick questions.<br />+254 700 123 456</p>
           </Reveal>
         </div>

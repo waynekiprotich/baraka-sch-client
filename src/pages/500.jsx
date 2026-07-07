@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "react-router-dom";
 import SEO from "../components/SEO.jsx";
 
 export default function Error500() {
@@ -18,9 +19,7 @@ export default function Error500() {
       <div className="error-page">
         <h1>500</h1>
         <p>Something went wrong on our server. Please try again later.</p>
-        <a href="/" className="btn btn-primary" style={{ background: "var(--gold)", color: "var(--purple-dark)" }}>
-          Back to Home
-        </a>
+        <Link to="/" className="btn btn-primary">Back to Home</Link>
       </div>
     </>
   );

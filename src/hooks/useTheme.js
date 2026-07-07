@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export default function useTheme() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('baraka-theme') || 'light');
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem('baraka-theme');
+    return stored || 'light';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
