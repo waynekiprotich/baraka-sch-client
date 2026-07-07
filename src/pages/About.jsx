@@ -1,3 +1,5 @@
+"use client";
+
 import Reveal from '../components/Reveal.jsx';
 import Counter from '../components/Counter.jsx';
 import Tile from '../components/Tile.jsx';
@@ -62,21 +64,6 @@ export default function About() {
       </section>
 
       <section className="bg-flush">
-        <div className="container">
-          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}>
-            <p className="eyebrow" style={{ marginInline: 'auto' }}>Core Values</p>
-            <h2>What guides every decision we make</h2>
-          </Reveal>
-          <div className="grid grid-4 stagger">
-            <Reveal className="card"><h3>Integrity</h3><p>Doing right even when no one is watching.</p></Reveal>
-            <Reveal className="card" delay={60}><h3>Excellence</h3><p>Pursuing the highest standard in all things.</p></Reveal>
-            <Reveal className="card" delay={120}><h3>Compassion</h3><p>Leading with empathy, in and out of class.</p></Reveal>
-            <Reveal className="card" delay={180}><h3>Discipline</h3><p>The foundation of every meaningful achievement.</p></Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-tint">
         <div className="container split reverse">
           <Reveal dir="right" className="split-media"><Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
           <Reveal className="split-body">
@@ -117,26 +104,24 @@ export default function About() {
         <div className="container">
           <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Achievements</p><h2>Recognised for what matters</h2></Reveal>
           <Reveal className="stats-strip">
-            <div className="stat-cell"><Counter target={9} /><span>County Science Awards</span></div>
-            <div className="stat-cell"><Counter target={4} /><span>Regional Athletics Titles</span></div>
-            <div className="stat-cell"><Counter target={98} suffix="%" /><span>KCPE Transition Rate</span></div>
-            <div className="stat-cell"><Counter target={15} suffix="+" /><span>Years Running</span></div>
-            <div className="stat-cell"><Counter target={640} suffix="+" /><span>Current Learners</span></div>
-            <div className="stat-cell"><Counter target={3200} suffix="+" /><span>Alumni</span></div>
+            <div className="stat-cell"><Counter target={98} suffix="%" /><span>KCPE Mean Transition</span></div>
+            <div className="stat-cell"><Counter target={72} suffix="%" /><span>Distinction Rate</span></div>
+            <div className="stat-cell"><Counter target={9} /><span>County Top Performers</span></div>
+            <div className="stat-cell"><span className="stat-num">1:18</span><span>Teacher-Learner Ratio</span></div>
           </Reveal>
         </div>
       </section>
 
       <section className="bg-tint">
-        <div className="container">
-          <Reveal className="section-head"><p className="eyebrow">Campus in Pictures</p><h2>A glimpse of daily life at Baraka</h2></Reveal>
-          <div className="masonry">
-            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" wide />
-            <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" tall />
-            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" />
-            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" />
-            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" wide />
-          </div>
+        <div className="container split">
+          <Reveal className="split-body">
+            <p className="eyebrow">Digital Learning</p>
+            <h2>Technology as a tool, not a distraction</h2>
+            <p>Every classroom is equipped for supervised digital learning — from Grade 4 coding clubs to Junior School research skills — always paired with clear screen-time guidelines.</p>
+            <p>Assessment records, homework and attendance are all tracked digitally to keep parents updated on their child's progress.</p>
+            <Link to="/contact" className="btn btn-ghost">Contact Us for Details</Link>
+          </Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
         </div>
       </section>
     </>
