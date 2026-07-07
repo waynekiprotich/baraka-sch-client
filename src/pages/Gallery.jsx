@@ -9,15 +9,15 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
 
 const ALL_ITEMS = [
-  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Junior School science fair', cat: 'academics' },
-  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80', tall: true, cap: 'Athletics training on the track', cat: 'sports' },
-  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80', cap: 'Prayer hall morning assembly', cat: 'events' },
-  { sw: 'p1', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', cap: 'Library reading corner', cat: 'academics' },
-  { sw: 'p6', bg: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Open Day 2026', cat: 'events' },
-  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80', cap: 'Art studio work in progress', cat: 'campus' },
-  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80', tall: true, cap: 'Music festival rehearsal', cat: 'events' },
-  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80', cap: 'Debate society finals', cat: 'academics' },
-  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Campus grounds at sunrise', cat: 'campus' },
+  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Junior School science fair presentation', cat: 'academics' },
+  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80', tall: true, cap: 'Athletics training on the school track', cat: 'sports' },
+  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80', cap: 'Prayer hall morning assembly event', cat: 'events' },
+  { sw: 'p1', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', cap: 'Library reading corner and textbooks', cat: 'academics' },
+  { sw: 'p6', bg: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Open Day 2026 parent assembly', cat: 'events' },
+  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80', cap: 'Art studio paint project in progress', cat: 'campus' },
+  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80', tall: true, cap: 'Music festival choir rehearsal', cat: 'events' },
+  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80', cap: 'Debate society championship finals', cat: 'academics' },
+  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', wide: true, cap: 'Baraka School campus grounds at sunrise', cat: 'campus' },
 ];
 
 const CATS = [
@@ -67,6 +67,7 @@ export default function Gallery() {
                   key={it.cap}
                   swatch={it.sw}
                   bgImage={it.bg}
+                  alt={it.cap}
                   wide={it.wide}
                   tall={it.tall}
                   onClick={() => setLb({ open: true, sw: it.sw, bg: it.bg, cap: it.cap })}

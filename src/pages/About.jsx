@@ -35,7 +35,7 @@ export default function About() {
       <section className="bg-flush">
         <div className="container split">
           <Reveal dir="left" className="split-media">
-            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" className="frame" />
+            <Tile swatch="p4" bgImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Group of friendly primary school children learning together in an inclusive classroom" className="frame" />
             <div className="badge-float"><span className="n">2011</span><p>the year Baraka opened its doors in Kapsabet</p></div>
           </Reveal>
           <Reveal className="split-body">
@@ -66,7 +66,7 @@ export default function About() {
 
       <section className="bg-flush">
         <div className="container split reverse">
-          <Reveal dir="right" className="split-media"><Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Mrs. Ruth Chepkoech, Founding Director of Baraka School Kapsabet" className="frame" /></Reveal>
           <Reveal className="split-body">
             <p className="eyebrow">Leadership</p>
             <h2>A message from our Director</h2>
@@ -78,7 +78,7 @@ export default function About() {
 
       <section className="bg-flush">
         <div className="container split">
-          <Reveal dir="left" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
+          <Reveal dir="left" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Mr. Samuel Kiptoo, Headteacher of Baraka School Kapsabet" className="frame" /></Reveal>
           <Reveal className="split-body">
             <p className="eyebrow">Leadership</p>
             <h2>A message from our Headteacher</h2>
@@ -92,11 +92,11 @@ export default function About() {
         <div className="container">
           <Reveal className="section-head"><p className="eyebrow">Milestones</p><h2>Our journey so far</h2></Reveal>
           <Reveal className="timeline">
-            <div className="timeline-item"><span className="yr">2011</span><h4>Baraka School Kapsabet opens</h4><p>Two classrooms, forty pupils and a bold idea about what a day school could be.</p></div>
-            <div className="timeline-item"><span className="yr">2015</span><h4>First KCPE candidates graduate</h4><p>Our founding cohort posts results in the county's top tier.</p></div>
-            <div className="timeline-item"><span className="yr">2019</span><h4>New science and ICT block opens</h4><p>Purpose-built labs double our practical-learning capacity.</p></div>
-            <div className="timeline-item"><span className="yr">2023</span><h4>Full CBC transition completed</h4><p>Every grade fully aligned to the Competency-Based Curriculum.</p></div>
-            <div className="timeline-item"><span className="yr">2026</span><h4>640+ learners, 58+ staff</h4><p>Baraka becomes one of Nandi County's most sought-after day schools.</p></div>
+            <div className="timeline-item"><span className="yr">2011</span><h3>Baraka School Kapsabet opens</h3><p>Two classrooms, forty pupils and a bold idea about what a day school could be.</p></div>
+            <div className="timeline-item"><span className="yr">2015</span><h3>First KCPE candidates graduate</h3><p>Our founding cohort posts results in the county's top tier.</p></div>
+            <div className="timeline-item"><span className="yr">2019</span><h3>New science and ICT block opens</h3><p>Purpose-built labs double our practical-learning capacity.</p></div>
+            <div className="timeline-item"><span className="yr">2023</span><h3>Full CBC transition completed</h3><p>Every grade fully aligned to the Competency-Based Curriculum.</p></div>
+            <div className="timeline-item"><span className="yr">2026</span><h3>640+ learners, 58+ staff</h3><p>Baraka becomes one of Nandi County's most sought-after day schools.</p></div>
           </Reveal>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function About() {
             <p>Assessment records, homework and attendance are all tracked digitally to keep parents updated on their child's progress.</p>
             <Link to="/contact" className="btn btn-ghost">Contact Us for Details</Link>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" className="frame" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Students engaging with digital computers and learning screens under supervision" className="frame" /></Reveal>
         </div>
       </section>
     </>

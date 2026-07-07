@@ -8,11 +8,39 @@ import SEO from "../components/SEO.jsx";
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Baraka School Kapsabet",
+    "url": "https://barakaschoolkapsabet.ac.ke/",
+    "logo": "https://barakaschoolkapsabet.ac.ke/images/logo.svg",
+    "image": "https://barakaschoolkapsabet.ac.ke/images/logo.svg",
+    "description": "Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kapsabet–Eldoret Road",
+      "addressLocality": "Kapsabet",
+      "addressRegion": "Nandi County",
+      "addressCountry": "KE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "0.2017",
+      "longitude": "35.1053"
+    },
+    "telephone": "+254700123456",
+    "sameAs": [
+      "https://www.facebook.com/barakaschoolkapsabet",
+      "https://www.instagram.com/barakaschoolkapsabet"
+    ]
+  };
+
   return (
     <>
       <SEO 
         title="Home" 
         description="Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum." 
+        schema={homeSchema}
       />
 
       {/* Self-contained minimalist Apple-inspired styles */}
@@ -68,7 +96,7 @@ export default function Home() {
         {/* Illustration positioned via CSS */}
         <img
           src="/images/hero-illustration.svg"
-          alt="Baraka School illustration"
+          alt="Baraka School illustration layout"
           className="hero-illustration"
         />
       </section>
@@ -137,7 +165,7 @@ export default function Home() {
           </Reveal>
           <div className="grid grid-4 stagger">
             <Reveal className="card">
-              <div className="card-icon" style={{ background: "white" }}>
+              <div className="card-icon" style={{ background: "white" }} aria-hidden="true">
                 🎨
               </div>
               <h3>Creative Arts</h3>
@@ -147,7 +175,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={60}>
-              <div className="card-icon" style={{ background: "white" }}>
+              <div className="card-icon" style={{ background: "white" }} aria-hidden="true">
                 🌱
               </div>
               <h3>Nature & Play</h3>
@@ -157,7 +185,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={120}>
-              <div className="card-icon" style={{ background: "white" }}>
+              <div className="card-icon" style={{ background: "white" }} aria-hidden="true">
                 💻
               </div>
               <h3>Digital Explorers</h3>
@@ -166,7 +194,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal className="card" delay={180}>
-              <div className="card-icon" style={{ background: "white" }}>
+              <div className="card-icon" style={{ background: "white" }} aria-hidden="true">
                 🤝
               </div>
               <h3>Values & Character</h3>

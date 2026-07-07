@@ -65,10 +65,10 @@ export default function News() {
       <section className="bg-tint section-tight">
         <div className="container">
           <Reveal className="news-feature">
-            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" className="news-thumb" />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" alt="Winning group of students celebrating with trophies at the Science Congress" className="news-thumb" />
             <div className="news-body">
-              <span className="news-tag">Achievement</span>
-              <h3>Baraka learners place first at the Nandi County Science Congress</h3>
+              <span className="news-tag">Featured Announcement</span>
+              <h2>Baraka learners place first at the Nandi County Science Congress</h2>
               <p style={{ color: 'var(--ink-60)', lineHeight: 1.7 }}>Six projects from our Upper Primary and Junior School classes earned top honours this term, with two advancing to the regional finals in Eldoret. The winning entries covered water filtration, solar drying and a low-cost soil-moisture sensor.</p>
               <div className="news-meta">18 June 2026 · By the Communications Office</div>
             </div>
@@ -78,13 +78,17 @@ export default function News() {
 
       <section className="bg-flush">
         <div className="container">
+          <Reveal className="section-head">
+            <p className="eyebrow">Announcements</p>
+            <h2>Latest school updates</h2>
+          </Reveal>
           {filtered.length === 0 ? (
             <p style={{ textAlign: 'center', color: 'var(--ink-60)' }}>No articles match your search.</p>
           ) : (
             <div className="grid grid-3 stagger">
               {filtered.map((a, i) => (
                 <Reveal key={a.title} className="news-card" delay={i * 50}>
-                  <Tile swatch={a.sw} bgImage={a.bg} className="news-thumb" loading="lazy" />
+                  <Tile swatch={a.sw} bgImage={a.bg} alt={a.title} className="news-thumb" loading="lazy" />
                   <div className="news-body">
                     <span className="news-tag">{a.tag}</span>
                     <h3>{a.title}</h3>

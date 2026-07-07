@@ -103,7 +103,13 @@ export default function SchoolLife() {
       </PageHero>
 
       <section className="bg-flush">
-        <div className="container"><Tabs tabs={tabs} defaultKey="earlyyears" /></div>
+        <div className="container">
+          <Reveal className="section-head">
+            <p className="eyebrow">Interactive Campus Life</p>
+            <h2>Explore our co-curricular pathways</h2>
+          </Reveal>
+          <Tabs tabs={tabs} defaultKey="earlyyears" />
+        </div>
       </section>
 
       <svg className="lane-divider" viewBox="0 0 1200 64" preserveAspectRatio="none"><path className="lane-2" d="M0 40 C300 10 900 10 1200 40" /><path d="M0 50 C300 22 900 22 1200 50" /></svg>
@@ -112,11 +118,11 @@ export default function SchoolLife() {
         <div className="container">
           <Reveal className="section-head"><p className="eyebrow">Gallery</p><h2>Moments from this term</h2></Reveal>
           <div className="masonry">
-            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" wide />
-            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" tall />
-            <Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" />
-            <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" />
-            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" wide />
+            <Tile swatch="p3" bgImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="Students conducting a physics experiment in the science fair" wide />
+            <Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80" alt="Young athletes jogging together on the training field" tall />
+            <Tile swatch="p5" bgImage="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="Students reading peacefully in the school library corner" />
+            <Tile swatch="p1" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" alt="Creative class drawing and painting in the school art room" />
+            <Tile swatch="p6" bgImage="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80" alt="Primary students engaging in an outdoor recreation session" wide />
           </div>
           <div style={{ textAlign: 'center', marginTop: '36px' }}><Link to="/gallery" className="btn btn-ghost">Open Full Gallery</Link></div>
         </div>

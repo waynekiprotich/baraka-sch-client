@@ -1,4 +1,4 @@
-export default function Tile({ swatch = 'p1', bgImage, label, title, wide, tall, onClick, className = '' }) {
+export default function Tile({ swatch = 'p1', bgImage, alt = '', label, title, wide, tall, onClick, className = '' }) {
   const classes = `tile ${swatch} ${wide ? 'wide' : ''} ${tall ? 'tall' : ''} ${onClick ? 'm-item' : ''} ${className}`.trim();
   const handleKeyDown = (e) => {
     if (onClick && (e.key === 'Enter' || e.key === ' ')) {
@@ -7,10 +7,19 @@ export default function Tile({ swatch = 'p1', bgImage, label, title, wide, tall,
     }
   };
   return (
-    <div className={classes} onClick={onClick} onKeyDown={handleKeyDown} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined}>
+    <div 
+      className={classes} 
+      onClick={onClick} 
+      onKeyDown={handleKeyDown} 
+      role={onClick ? 'button' : undefined} 
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={onClick && alt ? `View larger image: ${alt}` : undefined}
+    >
       {bgImage && (
         <div 
           className="tile-bg-image" 
+          role="img"
+          aria-label={alt || "Baraka School Kapsabet Campus visual"}
           style={{ 
             position: 'absolute', 
             inset: 0, 

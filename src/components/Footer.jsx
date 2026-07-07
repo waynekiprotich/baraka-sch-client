@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <div className="brand">
-            <img className="brand-mark" src="/images/logo.svg" alt="" />
+            <img className="brand-mark" src="/images/logo.svg" alt="Baraka School Logo" />
             <span className="brand-text"><strong>Baraka School</strong><span>Kapsabet</span></span>
           </div>
           <p>A premium mixed day school nurturing excellence, character and future leaders in Kapsabet, Nandi County.</p>
@@ -54,7 +54,7 @@ export default function Footer() {
               <button type="submit">Join</button>
             </div>
           </form>
-          <div className="map-embed tile p5" role="img" aria-label="Map showing Baraka School Kapsabet location"></div>
+          <div className="map-embed tile p5" role="img" aria-label="Geographical location Map of Baraka School Kapsabet on Kapsabet-Eldoret Road"></div>
         </div>
       </div>
       <div className="container footer-bottom">

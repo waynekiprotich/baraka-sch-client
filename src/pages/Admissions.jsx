@@ -80,7 +80,7 @@ export default function Admissions() {
               ['02', 'Assessment & Interview', 'A short, friendly placement assessment for the learner and parents.'],
               ['03', 'Offer & Enrolment', 'Receive your offer letter, pay the deposit, and confirm your place.'],
             ].map(([num, title, body], i) => (
-              <Reveal key={num} className="step" delay={i * 80}><span className="num">{num}</span><h4>{title}</h4><p>{body}</p></Reveal>
+              <Reveal key={num} className="step" delay={i * 80}><span className="num">{num}</span><h3>{title}</h3><p>{body}</p></Reveal>
             ))}
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Admissions() {
               <li><CheckIcon />Two passport photos</li>
             </ul>
           </Reveal>
-          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" className="frame" loading="lazy" /></Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Students writing on books in an organic study session group" className="frame" loading="lazy" /></Reveal>
         </div>
       </section>
 
