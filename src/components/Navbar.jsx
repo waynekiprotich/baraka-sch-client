@@ -84,7 +84,7 @@ export default function Navbar({ onMenuOpen }) {
     >
       <div className="nav-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", maxWidth: "1400px", margin: "0 auto", padding: "0 24px" }}>
         <Link to="/" className="brand" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none", flexShrink: 0 }}>
-          <img className="brand-mark" src="/images/logo.svg" alt="Baraka School Logo" style={{ height: "40px", width: "auto" }} />
+          <img className="brand-mark" src="/images/logo.svg" alt="Baraka School Logo" style={{ height: "40px", width: "auto", filter: solid && isLightMode ? "none" : "brightness(0) invert(1)", transition: "filter 0.3s" }} />
           <span className="brand-text" style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
             <strong style={{ fontSize: "1.15rem", letterSpacing: "-0.02em", color: textColor, transition: "color 0.3s" }}>Baraka School</strong>
             <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: activeGoldColor, fontWeight: 600 }}>Kapsabet</span>
