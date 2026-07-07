@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export function Preloader() {
   const [done, setDone] = useState(false);
+
   useEffect(() => {
     const onLoad = () => setTimeout(() => setDone(true), 300);
     if (document.readyState === 'complete') {
@@ -16,6 +17,7 @@ export function Preloader() {
       clearTimeout(fallback);
     };
   }, []);
+
   return (
     <div className={`preloader ${done ? 'done' : ''}`} aria-hidden="true">
       <img className="mark" src="/images/logo.svg" alt="" />
@@ -35,6 +37,7 @@ export function MobileCta() {
 
 export function FabStack() {
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const onScroll = () => setShow(window.scrollY > 600);
@@ -72,15 +75,18 @@ export function FabStack() {
 
 export function CookieBanner() {
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     if (localStorage.getItem('baraka-cookie-ack')) return;
     const t = setTimeout(() => setShow(true), 900);
     return () => clearTimeout(t);
   }, []);
+
   const ack = () => {
     localStorage.setItem('baraka-cookie-ack', '1');
     setShow(false);
   };
+
   return (
     <div className={`cookie-banner ${show ? 'show' : ''}`}>
       <p>We use cookies to improve your experience on this site. By continuing, you agree to our use of cookies.</p>
