@@ -77,13 +77,24 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Hero section with left‑aligned text */}
-      <section className="hero" style={{ display: "flex", justifyContent: "flex-start" }}>
-        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left" }}>
-          <h1>
+      {/* Hero section with a school photo background and brand color gradient overlay */}
+      <section 
+        className="hero" 
+        style={{ 
+          display: "flex", 
+          justifyContent: "flex-start",
+          position: "relative",
+          backgroundImage: "linear-gradient(rgba(38, 14, 78, 0.82), rgba(38, 14, 78, 0.88)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "#ffffff"
+        }}
+      >
+        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left", zIndex: 2 }}>
+          <h1 style={{ color: "#ffffff" }}>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
-          <p>
+          <p style={{ color: "rgba(255, 255, 255, 0.9)" }}>
             Baraka School Kapsabet was built on the belief that children rise to meet high expectations when they feel truly known.
           </p>
           <div className="hero-cta">
@@ -93,12 +104,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* Illustration positioned via CSS */}
-        <img
-          src="/images/hero-illustration.svg"
-          alt="Baraka School illustration layout"
-          className="hero-illustration"
-        />
       </section>
 
       {/* Quick facts */}
