@@ -5,6 +5,7 @@ import Counter from '../components/Counter.jsx';
 import Tile from '../components/Tile.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SEO from '../components/SEO.jsx';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   const aboutSchema = {
