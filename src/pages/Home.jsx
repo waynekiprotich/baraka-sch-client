@@ -15,6 +15,40 @@ export default function Home() {
         description="Baraka School Kapsabet is a premium private mixed day school in Kapsabet, Kenya, nurturing academic excellence, character and future leaders through the CBC curriculum." 
       />
 
+      {/* Self-contained minimalist Apple-inspired styles */}
+      <style>{`
+        .hero-contact-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffffff; /* Crisp solid white */
+          color: #1d1d1f !important; /* Elegant dark charcoal text */
+          font-weight: 600;
+          font-size: 15px;
+          padding: 14px 32px;
+          border-radius: 9999px; /* Perfect pill shape */
+          border: 1px solid rgba(0, 0, 0, 0.08); /* Minimalist clean border border */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft drop shadow (no glow) */
+          text-decoration: none;
+          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                      background-color 0.2s ease, 
+                      box-shadow 0.2s ease;
+          cursor: pointer;
+        }
+
+        .hero-contact-btn:hover {
+          background-color: #f5f5f7; /* Apple-inspired off-white shift on hover */
+          transform: translateY(-2px); /* Elegant minimalist lift */
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Enhanced soft drop shadow */
+          color: #1d1d1f !important;
+        }
+
+        .hero-contact-btn:active {
+          transform: translateY(0);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+      `}</style>
+
       {/* Hero section with left‑aligned text */}
       <section className="hero" style={{ display: "flex", justifyContent: "flex-start" }}>
         <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left" }}>
@@ -25,8 +59,8 @@ export default function Home() {
             Baraka School Kapsabet was built on the belief that children rise to meet high expectations when they feel truly known.
           </p>
           <div className="hero-cta">
-            {/* Only Contact Us button remains in hero CTA */}
-            <Link to="/contact" className="btn btn-secondary" style={{ color: "#000" }}>
+            {/* Styled "Contact Us" button for high-contrast accessibility */}
+            <Link to="/contact" className="hero-contact-btn">
               Contact Us
             </Link>
           </div>
@@ -153,7 +187,7 @@ export default function Home() {
           </Reveal>
           <div className="hero-cta" style={{ justifyContent: "center", marginTop: "28px" }}>
             <Link to="/admissions#apply" className="btn btn-primary">Apply Online</Link>
-            <Link to="/contact" className="btn btn-secondary" style={{ color: "#000" }}>
+            <Link to="/contact" className="hero-contact-btn">
               Contact Us
             </Link>
           </div>
