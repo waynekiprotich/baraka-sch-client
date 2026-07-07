@@ -217,14 +217,6 @@ export default function Navbar({ onMenuOpen }) {
 
         <div className="nav-actions" style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
           <button
-            className="search-desktop"
-            aria-label="Search the site"
-            style={{ background: "transparent", border: "none", cursor: "pointer", color: textColor, display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", transition: "color 0.3s" }}
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
-          </button>
-
-          <button
             aria-label="Toggle dark mode"
             onClick={toggle}
             style={{ background: "transparent", border: "none", cursor: "pointer", color: textColor, display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", transition: "color 0.3s" }}
