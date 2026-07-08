@@ -54,41 +54,6 @@ export default function Admissions() {
     },
   };
 
-  const [applications, setApplications] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const loadApplications = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/admissions');
-      if (!response.ok) throw new Error('Failed to fetch admissions');
-      const data = await response.json();
-      setApplications(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    loadApplications();
-  }, []);
-
-  const admissionsSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: 'Baraka School Kapsabet Admissions',
-    description: 'Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.',
-    offers: {
-      '@type': 'Offer',
-      category: 'Education',
-      priceCurrency: 'KES',
-      description: 'Termly tuition fees starting from KES 28,000',
-    },
-  };
-
   return (
     <>
       <SEO
