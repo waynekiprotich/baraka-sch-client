@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout.jsx";
 import ErrorBoundary from "../components/ErrorBoundary.jsx";
 import { lazy, Suspense } from "react";
+import AdminRoutes from "../admin/routes/AdminRoutes.jsx";
 
 const Home = lazy(() => import("../pages/Home.jsx"));
 const About = lazy(() => import("../pages/About.jsx"));
@@ -37,6 +38,7 @@ export default function AppRoutes() {
             <Route path="/500" element={<Error500 />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+          <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
       </Suspense>
     </ErrorBoundary>
