@@ -39,3 +39,4 @@ __tests__/
 coverage/
 *.spec.js
 *.test.js
+.dyad/
