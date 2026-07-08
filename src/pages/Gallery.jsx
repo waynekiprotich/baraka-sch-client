@@ -104,7 +104,7 @@ export default function Gallery() {
               <h3>Virtual Tour</h3>
               <p style={{ marginBottom: '20px' }}>A 360° walkthrough is in production — check back this term.</p>
               <a href="#" className="btn btn-ghost">Notify Me</a>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>

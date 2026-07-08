@@ -54,6 +54,41 @@ export default function Admissions() {
     },
   };
 
+  const [applications, setApplications] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const loadApplications = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/admissions');
+      if (!response.ok) throw new Error('Failed to fetch admissions');
+      const data = await response.json();
+      setApplications(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadApplications();
+  }, []);
+
+  const admissionsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Baraka School Kapsabet Admissions',
+    description: 'Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.',
+    offers: {
+      '@type': 'Offer',
+      category: 'Education',
+      priceCurrency: 'KES',
+      description: 'Termly tuition fees starting from KES 28,000',
+    },
+  };
+
   return (
     <>
       <SEO
@@ -143,21 +178,19 @@ export default function Admissions() {
           <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Online Application</p><h2>Start your application</h2></Reveal>
           <Reveal>
             <DemoForm className="card-form" style={{ maxWidth: '820px', marginInline: 'auto' }}>
-              <div className="form-grid">
-                <div className="field"><label htmlFor="pname">Learner's Full Name <span className="req">*</span></label><input id="pname" required type="text" placeholder="e.g. Amani Kiptoo" /></div>
-                <div className="field"><label htmlFor="pdob">Date of Birth <span className="req">*</span></label><input id="pdob" required type="date" /></div>
-                <div className="field">
-                  <label htmlFor="pgrade">Grade Applying For <span className="req">*</span></label>
-                  <select id="pgrade" required defaultValue="">
-                    <option value="" disabled>Select grade</option>
-                    <option>Playgroup</option><option>PP1 / PP2</option><option>Grade 1 – 3</option><option>Grade 4 – 6</option><option>Grade 7 – 9</option>
-                  </select>
-                </div>
-                <div className="field"><label htmlFor="pparent">Parent / Guardian Name <span className="req">*</span></label><input id="pparent" required type="text" /></div>
-                <div className="field"><label htmlFor="pphone">Phone Number <span className="req">*</span></label><input id="pphone" required type="tel" placeholder="+254 7XX XXX XXX" /></div>
-                <div className="field"><label htmlFor="pemail">Email Address</label><input id="pemail" type="email" /></div>
-                <div className="field full"><label htmlFor="pmsg">Anything we should know?</label><textarea id="pmsg" placeholder="Learning needs, previous school, questions..."></textarea></div>
+              <div className="field"><label htmlFor="pname">Learner's Full Name <span className="req">*</span></label><input id="pname" required type="text" placeholder="e.g. Amani Kiptoo" /></div>
+              <div className="field"><label htmlFor="pdob">Date of Birth <span className="req">*</span></label><input id="pdob" required type="date" /></div>
+              <div className="field">
+                <label htmlFor="pgrade">Grade Applying For <span className="req">*</span></label>
+                <select id="pgrade" required defaultValue="">
+                  <option value="" disabled>Select grade</option>
+                  <option>Playgroup</option><option>PP1 / PP2</option><option>Grade 1 – 3</option><option>Grade 4 – 6</option><option>Grade 7 – 9</option>
+                </select>
               </div>
+              <div className="field"><label htmlFor="pparent">Parent / Guardian Name <span className="req">*</span></label><input id="pparent" required type="text" /></div>
+              <div className="field"><label htmlFor="pphone">Phone Number <span className="req">*</span></label><input id="pphone" required type="tel" placeholder="+254 7XX XXX XXX" /></div>
+              <div className="field"><label htmlFor="pemail">Email Address</label><input id="pemail" type="email" /></div>
+              <div className="field full"><label htmlFor="pmsg">Anything we should know?</label><textarea id="pmsg" placeholder="Learning needs, previous school, questions..."></textarea></div>
             </DemoForm>
             <p style={{ textAlign: 'center', marginTop: '14px', fontSize: '.82rem', color: 'var(--ink-40)' }}>Demo form — no data is sent in this build.</p>
           </Reveal>

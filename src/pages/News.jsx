@@ -1,34 +1,48 @@
 "use client";
 
-import { useMemo, useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import Tile from '../components/Tile.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SEO from '../components/SEO.jsx';
 import { Link } from 'react-router-dom';
 
-const ARTICLES = [
-  { sw: 'p2', bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Athletics team sweeps the county cross-country meet', blurb: 'Baraka runners took gold in four of six age categories.', date: '28 May 2026' },
-  { sw: 'p5', bg: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: "Parents' Day 2026: photos and highlights", blurb: 'Over 500 family members joined us for a full day of open classrooms.', date: '14 April 2026' },
-  { sw: 'p6', bg: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', tag: 'Admissions', title: '2027 intake applications now open', blurb: 'Priority placement closes 30 September for returning families.', date: '2 April 2026' },
-  { sw: 'p1', bg: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80', tag: 'Achievement', title: 'Two learners selected for the National Debate Camp', blurb: 'Grade 8 debaters Faith and Kevin head to Nairobi this July.', date: '20 March 2026' },
-  { sw: 'p4', bg: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80', tag: 'Community', title: 'New computer lab officially opened', blurb: 'Twenty-five new workstations expand our digital learning capacity.', date: '6 March 2026' },
-  { sw: 'p3', bg: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80', tag: 'Sports', title: 'Baraka hosts the Kapsabet Zone athletics trials', blurb: 'Our field hosted eight schools competing for zonal qualification.', date: '19 February 2026' },
-];
-
-const CATS = ['All', 'Achievement', 'Sports', 'Community', 'Admissions'];
-
 export default function News() {
   const [cat, setCat] = useState('All');
   const [query, setQuery] = useState('');
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        params.append('page', 1);
+        params.append('per_page', 10);
+        if (cat !== 'All') params.append('category', cat);
+        if (query) params.append('q', query);
+        const response = await fetch('/api/news?' + params.toString());
+        if (!response.ok) throw new Error('Failed to fetch news');
+        const data = await response.json();
+        setArticles(data.articles);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchNews();
+  }, [cat, query]);
 
   const filtered = useMemo(() => {
-    return ARTICLES.filter((a) => {
+    return articles.filter((a) => {
       const matchesCat = cat === 'All' || a.tag === cat;
       const matchesQuery = a.title.toLowerCase().includes(query.toLowerCase());
       return matchesCat && matchesQuery;
     });
-  }, [cat, query]);
+  }, [articles, cat, query]);
 
   const newsSchema = {
     '@context': 'https://schema.org',
@@ -55,7 +69,7 @@ export default function News() {
             <input type="search" placeholder="Search news articles…" aria-label="Search news" value={query} onChange={(e) => setQuery(e.target.value)} />
           </div>
           <div className="tabs-nav" style={{ margin: 0 }}>
-            {CATS.map((c) => (
+            {['All', 'Achievement', 'Sports', 'Community', 'Admissions'].map((c) => (
               <button key={c} className={`tab-btn ${cat === c ? 'active' : ''}`} onClick={() => setCat(c)}>{c}</button>
             ))}
           </div>
@@ -82,12 +96,16 @@ export default function News() {
             <p className="eyebrow">Announcements</p>
             <h2>Latest school updates</h2>
           </Reveal>
-          {filtered.length === 0 ? (
+          {loading ? (
+            <p style={{ textAlign: 'center', color: 'var(--ink-60)' }}>Loading news...</p>
+          ) : error ? (
+            <p style={{ textAlign: 'center', color: 'var(--ink-60)' }}>Error: {error}</p>
+          ) : filtered.length === 0 ? (
             <p style={{ textAlign: 'center', color: 'var(--ink-60)' }}>No articles match your search.</p>
           ) : (
             <div className="grid grid-3 stagger">
-              {filtered.map((a, i) => (
-                <Reveal key={a.title} className="news-card" delay={i * 50}>
+              {articles.map((a, i) => (
+                <Reveal key={a.id} className="news-card" delay={i * 50}>
                   <Tile swatch={a.sw} bgImage={a.bg} alt={a.title} className="news-thumb" loading="lazy" />
                   <div className="news-body">
                     <span className="news-tag">{a.tag}</span>

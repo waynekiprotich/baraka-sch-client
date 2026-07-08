@@ -6,98 +6,200 @@ import Tile from '../components/Tile.jsx';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SEO from '../components/SEO.jsx';
+import { sanitizeText, sanitizeEmail } from '../utils/sanitize.js';
+
+const CheckIcon = () => <svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M9 11l3 3 8-8" /></svg>;
+
+function submitContact(formData) {
+  return fetch('/api/contacts', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(res => {
+    if (!res.ok) throw new Error('Network response was not ok');
+    return res.json();
+  })
+  .then(data => {
+    alert(data.message);
+    return data;
+  })
+  .catch(err => {
+    console.error('Submission error:', err);
+    alert('Failed to submit. Please try again.');
+  });
+}
 
 export default function Contact() {
   const faqItems = [
-    { q: 'What are your office hours?', a: 'Monday to Friday, 7:30am – 5:00pm. Saturday mornings by appointment during term time.' },
-    { q: "What's the fastest way to reach the school?", a: 'WhatsApp or phone during office hours gets the quickest response — the contact form is best for non-urgent enquiries.' },
-    { q: 'Who do I contact in an emergency?', a: 'Call the emergency line listed below — it is monitored around the clock, including weekends and holidays.' },
+    { q: 'Is there a waiting list?', a: 'Popular entry grades (Playgroup, Grade 1 and Grade 7) do run waiting lists most years — we recommend applying at least one term ahead.' },
+    { q: 'Do you offer bursaries or sibling discounts?', a: 'Yes — a 10% sibling discount applies from the second child enrolled, and a limited number of merit bursaries are available each year.' },
+    { q: 'Can my child join mid-year?', a: 'Mid-year transfers are welcome, subject to space and a short placement assessment.' },
+    { q: 'Is transport available from my area?', a: 'Our school buses cover most routes within Kapsabet town and the surrounding trading centres — contact admissions to confirm your specific route.' },
   ];
 
-  const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Baraka School Kapsabet",
-    "image": `${window.location.origin}/images/logo.svg`,
-    "telephone": "+254-700-123-456",
-    "email": "info@barakaschoolkapsabet.ac.ke",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Kapsabet–Eldoret Road",
-      "addressLocality": "Kapsabet",
-      "addressRegion": "Nandi County",
-      "addressCountry": "KE"
+  const admissionsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Baraka School Kapsabet Admissions',
+    description: 'Admissions process, requirements, and fee structure for Playgroup through Grade 9 at Baraka School Kapsabet.',
+    offers: {
+      '@type': 'Offer',
+      category: 'Education',
+      priceCurrency: 'KES',
+      description: 'Termly tuition fees starting from KES 28,000'
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:30",
-        "closes": "17:00"
-      }
-    ]
+  };
+
+  const [formData, setFormData] = useState({
+    pname: '',
+    pdob: '',
+    pgrade: '',
+    pparent: '',
+    pphone: '',
+    pemail: '',
+    pmsg: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      name: formData.pparent,
+      email: formData.pemail,
+      subject: 'Admission Inquiry',
+      message: formData.pmsg
+    };
+    submitContact(payload);
+    setSubmitted(true);
+    // Reset form after a delay
+    setTimeout(() => {
+      setFormData({
+        pname: '',
+        pdob: '',
+        pgrade: '',
+        pparent: '',
+        pphone: '',
+        pemail: '',
+        pmsg: ''
+      });
+      setSubmitted(false);
+    }, 2600);
   };
 
   return (
     <>
-      <SEO 
-        title="Contact Us & Location" 
-        description="Get in touch with Baraka School Kapsabet. Find our phone number, email, WhatsApp contact, office hours, and campus location on Kapsabet–Eldoret Road."
-        schema={contactSchema}
+      <SEO
+        title="Admissions, Fees & Requirements"
+        description="Learn how to apply to Baraka School Kapsabet. View our termly fee structure, admission requirements, and start your online application."
+        schema={admissionsSchema}
       />
 
-      <PageHero crumb="Contact" title="We'd love to hear from you">
-        Visit, call, WhatsApp or send a message — our admissions and front-office team responds within one working day.
+      <PageHero crumb="Admissions" title="Begin your child's Baraka journey">
+        Places for Playgroup through Grade 9 are open for the 2027 intake. Here's everything you need to apply with confidence.
       </PageHero>
+      <section className="bg-flush section-tight">
+        <div className="container hero-cta" style={{ justifyContent: 'center' }}>
+          <a href="#apply" className="btn btn-primary">Apply Online</a>
+        </div>
+      </section>
 
-      <section className="bg-flush">
+      <section id="process" className="bg-flush">
+        <div className="container">
+          <Reveal className="section-head"><p className="eyebrow">How It Works</p><h2>Admission process</h2></Reveal>
+          <div className="steps stagger">
+            {[
+              ['01', 'Submit Enquiry', 'Fill the online form or visit our admissions office with your query.'],
+              ['02', 'Assessment & Interview', 'A short, friendly placement assessment for the learner and parents.'],
+              ['03', 'Offer & Enrolment', 'Receive your offer letter, pay the deposit, and confirm your place.'],
+            ].map(([num, title, body], i) => (
+              <Reveal key={num} className="step" delay={i * 80}><span className="num">{num}</span><h3>{title}</h3><p>{body}</p></Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-tint">
         <div className="container split">
-          <Reveal dir="left" className="split-media">
-            <div className="frame tile p5" role="img" aria-label="Map showing Baraka School Kapsabet location, Kapsabet–Eldoret Road, Nandi County"></div>
-          </Reveal>
           <Reveal className="split-body">
-            <p className="eyebrow">Visit Us</p>
-            <h2>Find us in Kapsabet</h2>
-            <p style={{ marginBottom: '6px' }}><strong>Address —</strong> Kapsabet–Eldoret Road, Kapsabet, Nandi County, Kenya</p>
-            <p style={{ marginBottom: '6px' }}><strong>Phone —</strong> +254 700 123 456</p>
-            <p style={{ marginBottom: '6px' }}><strong>Email —</strong> info@barakaschoolkapsabet.ac.ke</p>
-            <p style={{ marginBottom: '22px' }}><strong>WhatsApp —</strong> <a href="https://wa.me/254700123456" style={{ color: 'var(--purple)', fontWeight: 700 }}>+254 700 123 456</a></p>
-            <div className="social-row">
-              <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="var(--purple)" strokeWidth="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
-              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="var(--purple)" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /></svg></a>
-              <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="var(--purple)" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="4" /><polygon points="10 9 15 12 10 15 10 9" /></svg></a>
+            <p className="eyebrow">Requirements</p>
+            <h2>What you'll need to apply</h2>
+            <ul>
+              <li><CheckIcon />Completed application form</li>
+              <li><CheckIcon />Copy of learner's birth certificate</li>
+              <li><CheckIcon />Most recent school report / transfer letter</li>
+              <li><CheckIcon />Immunisation record (Playgroup & Lower Primary)</li>
+              <li><CheckIcon />Two passport photos</li>
+            </ul>
+          </Reveal>
+          <Reveal dir="right" className="split-media"><Tile swatch="p2" bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Students writing on books in an organic study session group" className="frame" loading="lazy" /></Reveal>
+        </div>
+      </section>
+
+      <section id="fees" className="bg-flush">
+        <div className="container">
+          <Reveal className="section-head"><p className="eyebrow">Investment</p><h2>Fees overview</h2><p>Indicative termly fees. A full, itemised structure is shared at the offer stage.</p></Reveal>
+          <Reveal as="table" className="fee-table">
+            <thead><tr><th>Level</th><th>Tuition (Termly)</th><th>Meals</th><th>Transport (Optional)</th></tr></thead>
+            <tbody>
+              <tr><td>Playgroup — PP2</td><td><strong>KES 28,000</strong></td><td>KES 6,000</td><td>from KES 4,500</td></tr>
+              <tr><td>Lower Primary (Gr 1–3)</td><td><strong>KES 34,000</strong></td><td>KES 6,500</td><td>from KES 4,500</td></tr>
+              <tr><td>Upper Primary (Gr 4–6)</td><td><strong>KES 38,000</strong></td><td>KES 7,000</td><td>from KES 5,000</td></tr>
+              <tr><td>Junior School (Gr 7–9)</td><td><strong>KES 44,000</strong></td><td>KES 7,500</td><td>from KES 5,000</td></tr>
+            </tbody>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-tint">
+        <div className="container">
+          <Reveal className="section-head"><p className="eyebrow">Common Questions</p><h2>Frequently asked questions</h2></Reveal>
+          <Reveal style={{ maxWidth: '760px' }}><Accordion items={faqItems} /></Reveal>
+        </div>
+      </section>
+
+      <section id="forms" className="bg-flush">
+        <div className="container">
+          <Reveal className="cta-band">
+            <h2>Download admission forms</h2>
+            <p>Get the full application pack, fee structure and requirements checklist as a PDF.</p>
+            <div className="cta-actions">
+              <a href="#" className="btn btn-primary">Download Application Form</a>
+              <a href="#" className="btn btn-secondary">Download Fee Structure</a>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-tint">
-        <div className="container grid grid-3 stagger">
-          <Reveal className="card">
-            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><circle cx="12" cy="12" r="9" stroke="currentColor" /><path d="M12 7v5l3 3" stroke="currentColor" /></svg></div>
-            <h3>Office Hours</h3><p>Mon – Fri, 7:30am – 5:00pm.<br />Saturday mornings by appointment.</p>
-          </Reveal>
-          <Reveal className="card" delay={80}>
-            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6a1 1 0 0 1 1-1h3z" stroke="currentColor" /></svg></div>
-            <h3>Emergency Contact</h3><p>+254 700 999 111<br />Answered 24/7, including holidays.</p>
-          </Reveal>
-          <Reveal className="card" delay={160}>
-            <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke="currentColor" /><circle cx="12" cy="10" r="3" stroke="currentColor" /></svg></div>
-            <h3>WhatsApp</h3><p>Fastest for quick questions.<br />+254 700 123 456</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-tint">
+      <section id="apply" className="bg-tint">
         <div className="container">
-          <Reveal className="section-head"><p className="eyebrow">Common Questions</p><h2>Frequently asked questions</h2></Reveal>
-          <Reveal style={{ maxWidth: '760px' }}><Accordion items={faqItems} /></Reveal>
+          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Online Application</p><h2>Start your application</h2></Reveal>
+          <Reveal>
+            <form onSubmit={handleSubmit} className="card-form" style={{ maxWidth: '820px', marginInline: 'auto' }}>
+              <div className="field"><label htmlFor="pname">Learner's Full Name <span className="req">*</span></label><input id="pname" required type="text" placeholder="e.g. Amani Kiptoo" value={formData.pname} onChange={handleChange} /></div>
+              <div className="field"><label htmlFor="pdob">Date of Birth <span className="req">*</span></label><input id="pdob" required type="date" value={formData.pdob} onChange={handleChange} /></div>
+              <div className="field">
+                <label htmlFor="pgrade">Grade Applying For <span className="req">*</span></label>
+                <select id="pgrade" required defaultValue="" value={formData.pgrade} onChange={handleChange}>
+                  <option value="" disabled>Select grade</option>
+                  <option>Playgroup</option><option>PP1 / PP2</option><option>Grade 1 – 3</option><option>Grade 4 – 6</option><option>Grade 7 – 9</option>
+                </select>
+              </div>
+              <div className="field"><label htmlFor="pparent">Parent / Guardian Name <span className="req">*</span></label><input id="pparent" required type="text" value={formData.pparent} onChange={handleChange} /></div>
+              <div className="field"><label htmlFor="pphone">Phone Number <span className="req">*</span></label><input id="pphone" required type="tel" placeholder="+254 7XX XXX XXX" value={formData.pphone} onChange={handleChange} /></div>
+              <div className="field"><label htmlFor="pemail">Email Address</label><input id="pemail" type="email" value={formData.pemail} onChange={handleChange} /></div>
+              <div className="field full"><label htmlFor="pmsg">Anything we should know?</label><textarea id="pmsg" placeholder="Learning needs, previous school, questions..." value={formData.pmsg} onChange={handleChange}></textarea></div>
+              <button type="submit" className="btn btn-primary btn-block" style={{ marginTop: '24px' }} disabled={submitted}>
+                {submitted ? 'Sent — thank you!' : 'Submit'}
+              </button>
+            </form>
+            <p style={{ textAlign: 'center', marginTop: '14px', fontSize: '.82rem', color: 'var(--ink-40)' }}>Demo form — no data is sent in this build.</p>
+          </Reveal>
         </div>
       </section>
     </>
