@@ -23,6 +23,7 @@ export { LINKS };
 export default function Navbar({ onMenuOpen }) {
   const [solid, setSolid] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggle } = useTheme();
   const dropdownRef = useRef(null);
   const location = useLocation();
@@ -64,6 +65,11 @@ export default function Navbar({ onMenuOpen }) {
       ? "rgba(0,0,0,0.08)"
       : "rgba(255,255,255,0.08)"
     : "transparent";
+
+  const handleMenuToggle = () => {
+    setMenuOpen((prev) => !prev);
+    onMenuOpen();
+  };
 
   return (
     <header
@@ -261,8 +267,8 @@ export default function Navbar({ onMenuOpen }) {
 
           <button
             aria-label="Open menu"
-            aria-expanded="false"
-            onClick={onMenuOpen}
+            aria-expanded={menuOpen}
+            onClick={handleMenuToggle}
             style={{
               background: "transparent",
               border: "none",
@@ -279,9 +285,44 @@ export default function Navbar({ onMenuOpen }) {
             className="nav-toggle"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
+              {/* Top line - rotates and moves */}
+              <line
+                x1="3"
+                y1="6"
+                x2="21"
+                y2="6"
+                strokeLinecap="round"
+                style={{
+                  transformOrigin: "center",
+                  transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "rotate(0deg) translate(0, 0)",
+                  transition: "all 0.3s ease",
+                }}
+              />
+              {/* Middle line - fades out */}
+              <line
+                x1="3"
+                y1="12"
+                x2="21"
+                y2="12"
+                strokeLinecap="round"
+                style={{
+                  opacity: menuOpen ? 0 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              />
+              {/* Bottom line - rotates and moves */}
+              <line
+                x1="3"
+                y1="18"
+                x2="21"
+                y2="18"
+                strokeLinecap="round"
+                style={{
+                  transformOrigin: "center",
+                  transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "rotate(0deg) translate(0, 0)",
+                  transition: "all 0.3s ease",
+                }}
+              />
             </svg>
           </button>
         </div>
