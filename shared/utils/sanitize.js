@@ -1,1 +1,0 @@
-export function sanitizeText(value) { if (typeof value !== 'string') return ''; return value .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]/g, '') .trim() .slice(0, 2000); } export function sanitizeEmail(value) { if (typeof value !== 'string') return ''; return value.trim().slice(0, 254); }

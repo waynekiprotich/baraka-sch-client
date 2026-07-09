@@ -1,1 +1,0 @@
-export function validateEmail(email) { const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; return pattern.test(email); } export function validatePassword(password) { return password.length >= 8; } export function validateName(name) { return name.trim().length > 0; }

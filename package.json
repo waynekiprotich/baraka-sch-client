@@ -2,18 +2,30 @@
   "name": "baraka-school-kapsabet",
   "private": true,
   "version": "1.0.0",
-  "workspaces": [
-    "frontend",
-    "admin",
-    "shared"
-  ],
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix admin\"",
-    "build": "npm run build --prefix frontend && npm run build --prefix admin",
-    "lint": "npm run lint --prefix frontend && npm run lint --prefix admin",
-    "format": "npm run format --prefix frontend && npm run format --prefix admin"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "dependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@dyad-sh/react-vite-component-tagger": "^0.9.0",
+    "@vitejs/plugin-react": "latest",
+    "eslint": "^8.57.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.3.0",
+    "vite": "^5.4.0"
   }
 }
