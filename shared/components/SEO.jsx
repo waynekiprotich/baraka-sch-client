@@ -9,11 +9,9 @@ export default function SEO({
   schema
 }) {
   useEffect(() => {
-    // Update Title
     const fullTitle = title ? `${title} | Baraka School Kapsabet` : "Baraka School Kapsabet — Nurturing Excellence, Character & Future Leaders";
     document.title = fullTitle;
 
-    // Helper to update or create meta tags
     const updateMeta = (name, content, isProperty = false) => {
       if (!content) return;
       const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -30,24 +28,20 @@ export default function SEO({
       el.setAttribute('content', content);
     };
 
-    // Update standard meta tags
     updateMeta('description', description);
     updateMeta('keywords', keywords);
 
-    // Update Open Graph tags
     updateMeta('og:title', fullTitle, true);
     updateMeta('og:description', description, true);
     updateMeta('og:type', ogType, true);
     updateMeta('og:image', ogImage, true);
     updateMeta('og:url', window.location.href, true);
 
-    // Update Twitter Card tags
     updateMeta('twitter:card', 'summary_large_image');
     updateMeta('twitter:title', fullTitle);
     updateMeta('twitter:description', description);
     updateMeta('twitter:image', ogImage);
 
-    // Handle JSON-LD Schema
     let schemaScript = document.getElementById('json-ld-schema');
     if (schema) {
       if (!schemaScript) {

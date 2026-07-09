@@ -1,0 +1,71 @@
+"use client";
+
+import React, { Component } from "react";
+
+export default class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, info) {
+    console.error("ErrorBoundary caught an error:", error, info);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div
+          role="alert"
+          style={{
+            minHeight: "70vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            background:
+              "linear-gradient(150deg, var(--purple-dark, #3d1b65), var(--purple, #5b2c90))",
+            color: "#fff",
+            padding: "2rem",
+          }}
+        >
+          <p
+            style={{
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--gold, #f4b400)",
+              fontWeight: 700,
+              marginBottom: "12px",
+            }}
+          >
+            Something went wrong
+          </p>
+          <h1 style={{ color: "#fff", fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "16px" }}>
+            We hit an unexpected bump
+          </h1>
+          <p style={{ maxWidth: "480px", color: "rgba(255,255,255,.82)", marginBottom: "28px" }}>
+            The page ran into an error. You can try again, or head back to safety.
+          </p>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+            <button
+              onClick={() => this.setState({ hasError: false })}
+              className="btn btn-primary"
+              style={{ background: "var(--gold)", color: "var(--purple-dark)" }}
+            >
+              Try Again
+            </button>
+            <a href="/" className="btn btn-secondary" style={{ borderColor: "rgba(255,255,255,.5)" }}>
+              Back to Home
+            </a>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}

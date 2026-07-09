@@ -1,9 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * Wraps children and fades/slides them in once they scroll into view.
- * dir: 'up' (default) | 'left' | 'right'
- */
 export default function Reveal({ children, dir = 'up', delay = 0, as = 'div', className = '', ...rest }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
