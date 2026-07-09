@@ -1,26 +1,27 @@
 {
+  "name": "frontend",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "admin"
-  ],
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=admin\"",
-    "build": "npm run build --workspace=frontend && npm run build --workspace=admin",
-    "preview": "concurrently \"npm run preview --workspace=frontend\" \"npm run preview --workspace=admin\"",
-    "lint": "npm run lint --workspace=frontend && npm run lint --workspace=admin",
-    "format": "npm run format --workspace=frontend && npm run format --workspace=admin"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
-    "@dyad-sh/react-vite-component-tagger": "^0.9.0",
     "@vitejs/plugin-react": "latest",
-    "concurrently": "^8.2.2",
     "eslint": "^8.57.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "prettier": "^3.3.0",
-    "vite": "^5.4.0",
-    "typescript": "^5.0.0"
+    "vite": "^5.4.0"
   }
 }
