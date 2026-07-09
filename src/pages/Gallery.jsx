@@ -98,13 +98,16 @@ export default function Gallery() {
 
       <section className="bg-flush">
         <div className="container">
-          <Reveal as="div" className="section-head center" style={{ marginInline: 'auto' }}><p className="eyebrow" style={{ marginInline: 'auto' }}>Come See for Yourself</p><h2>Virtual tour</h2></Reveal>
+          <Reveal className="section-head center" style={{ marginInline: 'auto' }}>
+            <p className="eyebrow" style={{ marginInline: 'auto' }}>Come See for Yourself</p>
+            <h2>Virtual tour</h2>
+          </Reveal>
           <div className="grid grid-1 stagger" style={{ maxWidth: '600px', marginInline: 'auto' }}>
             <Reveal className="card" style={{ textAlign: 'center', padding: '44px' }}>
               <h3>Virtual Tour</h3>
               <p style={{ marginBottom: '20px' }}>A 360° walkthrough is in production — check back this term.</p>
               <a href="#" className="btn btn-ghost">Notify Me</a>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
