@@ -6,11 +6,13 @@ import AdminTopbar from '../components/AdminTopbar.jsx';
 
 export default function AdminLayout() {
   return (
-    <div className="dash-shell" style={{ minHeight: '100vh', borderRadius: 0 }}>
+    <div className="admin-shell">
       <AdminSidebar />
-      <div className="dash-main" style={{ width: '100%' }}>
+      <div className="admin-main">
         <AdminTopbar />
-        <Outlet />
+        <div className="admin-content">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

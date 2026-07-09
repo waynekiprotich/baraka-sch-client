@@ -139,7 +139,7 @@ export default function SchoolLife() {
             ].map(([who, quote], i) => (
               <Reveal key={who} className="card" delay={i * 70}>
                 <p className="testi-quote" style={{ fontSize: '1.05rem' }}>"{quote}"</p>
-                <p style={{ marginTop: '14px', fontSize: '.85rem', color: 'var(--ink-60)' }}>— {who}</p>
+                <p style={{ marginTop: '14px', fontSize: '.85rem', color: 'var(--ink)' }}>— {who}</p>
               </Reveal>
             ))}
           </div>

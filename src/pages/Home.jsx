@@ -43,20 +43,19 @@ export default function Home() {
         schema={homeSchema}
       />
 
-      {/* Self-contained minimalist Apple-inspired styles */}
       <style>{`
         .hero-contact-btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          background-color: #ffffff; /* Crisp solid white */
-          color: #1d1d1f !important; /* Elegant dark charcoal text */
+          background-color: #ffffff;
+          color: #1d1d1f !important;
           font-weight: 600;
           font-size: 15px;
           padding: 14px 32px;
-          border-radius: 9999px; /* Perfect pill shape */
-          border: 1px solid rgba(0, 0, 0, 0.08); /* Minimalist clean border border */
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft drop shadow (no glow) */
+          border-radius: 9999px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
           text-decoration: none;
           transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
                       background-color 0.2s ease, 
@@ -65,9 +64,9 @@ export default function Home() {
         }
 
         .hero-contact-btn:hover {
-          background-color: #f5f5f7; /* Apple-inspired off-white shift on hover */
-          transform: translateY(-2px); /* Elegant minimalist lift */
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Enhanced soft drop shadow */
+          background-color: #f5f5f7;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
           color: #1d1d1f !important;
         }
 
@@ -77,12 +76,11 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Hero section with a school photo background and brand color gradient overlay */}
       <section 
         className="hero" 
         style={{ 
           display: "flex", 
-          justifyContent: "flex-start",
+          alignItems: "center",
           position: "relative",
           backgroundImage: "linear-gradient(rgba(38, 14, 78, 0.82), rgba(38, 14, 78, 0.88)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80')",
           backgroundSize: "cover",
@@ -90,7 +88,13 @@ export default function Home() {
           color: "#ffffff"
         }}
       >
-        <div className="hero-content container text-left" style={{ marginLeft: 0, marginRight: "auto", textAlign: "left", zIndex: 2 }}>
+        <div className="hero-content container text-left" style={{ 
+          marginLeft: 0, 
+          marginRight: "auto", 
+          textAlign: "left", 
+          zIndex: 2,
+          paddingTop: "15vh" 
+        }}>
           <h1 style={{ color: "#ffffff" }}>
             Nurturing <em>Excellence</em>, Character & Future Leaders
           </h1>
@@ -98,7 +102,6 @@ export default function Home() {
             Baraka School Kapsabet was built on the belief that children rise to meet high expectations when they feel truly known.
           </p>
           <div className="hero-cta">
-            {/* Styled "Contact Us" button for high-contrast accessibility */}
             <Link to="/contact" className="hero-contact-btn">
               Contact Us
             </Link>
@@ -106,7 +109,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick facts */}
       <section className="bg-flush">
         <div className="container">
           <Reveal className="section-head">
@@ -134,7 +136,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our approach */}
       <section className="bg-tint">
         <div className="container">
           <Reveal className="section-head">
@@ -161,7 +162,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Early years */}
       <section className="bg-flush">
         <div className="container">
           <Reveal className="section-head">
@@ -211,7 +211,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to action */}
       <section className="bg-tint">
         <div className="container">
           <Reveal className="section-head">

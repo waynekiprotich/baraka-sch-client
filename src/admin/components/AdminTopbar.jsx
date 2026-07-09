@@ -2,6 +2,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
+import { LogOut } from 'lucide-react';
 
 export default function AdminTopbar() {
   const { user, logout } = useAuth();
@@ -13,12 +14,16 @@ export default function AdminTopbar() {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', flexWrap: 'wrap', gap: '12px' }}>
-      <div>
-        <h2 style={{ fontSize: '1.4rem' }}>Welcome, {user?.name || 'Admin'}</h2>
-        <p style={{ color: 'var(--ink-60)', fontSize: '.9rem' }}>Manage your school website content</p>
+    <header className="admin-topbar">
+      <div className="topbar-welcome">
+        <h1>Welcome, {user?.name || 'Admin'}</h1>
+        <p>Manage your school website content</p>
       </div>
-      <button className="btn btn-ghost" onClick={handleLogout}>Log Out</button>
-    </div>
+      
+      <button className="btn-logout" onClick={handleLogout}>
+        <LogOut size={16} />
+        <span>Log Out</span>
+      </button>
+    </header>
   );
 }
