@@ -1,0 +1,30 @@
+:root {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--text);
+  font-weight: 560;
+  letter-spacing: -.01em;
+}
+
+/* Body text */
+p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Utility typography */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--purple); font-weight: 700; margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: ""; width: 22px; height: 2px; background: var(--gold); border-radius: 2px;
+}
