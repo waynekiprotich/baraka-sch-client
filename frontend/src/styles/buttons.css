@@ -1,0 +1,18 @@
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 15px 30px; border-radius: var(--r-pill);
+  font-weight: 700; font-size: .94rem; letter-spacing: .01em;
+  border: 1px solid transparent; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, background .35s, color .35s;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: var(--gold); color: var(--purple-dark); box-shadow: var(--shadow-gold); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(244,180,0,.4); }
+.btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+.btn-secondary:hover { background: rgba(255,255,255,.14); transform: translateY(-3px); }
+.btn-ghost { background: transparent; color: var(--purple); border-color: var(--purple-14); }
+[data-theme="dark"] .btn-ghost { color: var(--gold); border-color: var(--purple-14); }
+.btn-ghost:hover { background: var(--purple-08); transform: translateY(-3px); }
+.btn-block { width: 100%; }
+.btn-sm { padding: 10px 20px; font-size: .84rem; }

@@ -1,0 +1,14 @@
+/* ---------- Forms ---------- */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: .85rem; font-weight: 700; color: var(--text); }
+.field .req { color: var(--gold); }
+.field input, .field select, .field textarea {
+  padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--white);
+  font-family: inherit; font-size: .96rem; color: var(--text); transition: border-color .3s, box-shadow .3s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 4px var(--purple-08); outline: none; }
+.field textarea { resize: vertical; min-height: 120px; }
+.field small { color: var(--ink-40); font-size: .78rem; }
+.card-form { background: var(--white); border-radius: var(--r-lg); padding: 44px; border: 1px solid var(--line); box-shadow: var(--shadow-md); }
