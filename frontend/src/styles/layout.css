@@ -1,0 +1,110 @@
+/* Layout utilities */
+.grid { display: grid; gap: 28px; }
+.grid-4 { grid-template-columns: repeat(4,1fr); }
+.grid-3 { grid-template-columns: repeat(3,1fr); }
+.grid-2 { grid-template-columns: repeat(2,1fr); }
+
+/* Spacing utilities */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+
+/* Typography */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--purple); font-weight: 700; margin-bottom: 16px;
+}
+[data-theme="dark"] .eyebrow { color: var(--gold); }
+.eyebrow::before {
+  content: ""; width: 22px; height: 2px; background: var(--gold); border-radius: 2px;
+}
+
+/* Section headings */
+.section-head { max-width: 680px; margin-bottom: 56px; }
+.section-head.center { margin-inline: auto; text-align: center; }
+.section-head.center .eyebrow { margin-inline: auto; }
+.section-head h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); margin-bottom: 18px; line-height: 1.15; }
+.section-head p { color: var(--ink-60); line-height: 1.75; margin-bottom: 16px; font-size: 1.03rem; }
+
+/* Responsive breakpoints */
+@media (max-width: 1080px) {
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .steps { grid-template-columns: repeat(2,1fr); }
+  .stats-strip { grid-template-columns: repeat(3,1fr); }
+  .split { display: grid; grid-template-columns: 1fr; gap: 44px; }
+  .split.reverse { direction: ltr; }
+  .news-feature { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .masonry { grid-template-columns: repeat(3,1fr); }
+  .dash-cards { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 860px) {
+  .nav-links, .nav-actions .search-desktop, .nav-actions .apply-desktop { display: none !important; }
+  .nav-toggle { display: flex !important; }
+  .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .hero-illustration { display: none; }
+  .dash-shell { grid-template-columns: 1fr; }
+  .dash-side { display: none; }
+}
+@media (max-width: 680px) {
+  .container { padding-inline: 16px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 16px; }
+  .stats-strip { grid-template-columns: repeat(2,1fr); }
+  .form-grid { grid-template-columns: 1fr; gap: 12px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  .masonry { grid-template-columns: repeat(2,1fr); grid-auto-rows: 100px; gap: 12px; }
+  .masonry .m-item.wide { grid-column: span 2; }
+
+  /* Hero mobile optimization */
+  .hero { min-height: 75vh; padding-bottom: 3rem; }
+  .hero-content { padding-top: calc(var(--nav-h) + 20px); text-align: center !important; margin-left: 0 !important; }
+  .hero-content h1 { font-size: 2.2rem !important; margin-bottom: 14px; }
+  .hero-content p { font-size: 1rem !important; margin-bottom: 24px; }
+  .hero-cta { justify-content: center !important; }
+
+  /* Split layout mobile optimization */
+  .split { gap: 24px; }
+  .split-body { text-align: center; }
+  .split-body h2 { font-size: 1.6rem; margin-bottom: 12px; }
+  .split-body p { font-size: 0.95rem; line-height: 1.6; }
+  .split-body ul { align-items: center; }
+  .split-body ul li { text-align: left; }
+  .split-body .btn { margin-inline: auto; }
+  .split-media .frame { aspect-ratio: 4/3; }
+
+  /* Testimonials mobile optimization */
+  .testi-card { min-width: 280px; padding: 24px; }
+  .testi-quote { font-size: 1rem; margin-bottom: 16px; }
+
+  /* Tabs mobile optimization */
+  .tabs-nav { justify-content: center; gap: 6px; margin-bottom: 24px; }
+  .tab-btn { padding: 8px 16px; font-size: 0.8rem; }
+
+  /* Cards mobile optimization */
+  .card { padding: 24px 20px; }
+  .card h3 { font-size: 1.1rem; }
+  .card p { font-size: 0.9rem; }
+
+  /* Steps mobile optimization */
+  .step { padding: 24px 20px; }
+  .step .num { font-size: 2rem; top: 12px; right: 16px; }
+
+  /* Table mobile optimization */
+  .fee-table { display: block; overflow-x: auto; }
+  .fee-table th, .fee-table td { padding: 12px 14px; font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.8rem !important; }
+  .section-head h2 { font-size: 1.5rem; }
+  .split-body h2 { font-size: 1.4rem; }
+  .stat-cell { padding: 24px 12px; }
+  .stat-num { font-size: 1.8rem; }
+  .stat-cell span { font-size: 0.75rem; }
+}

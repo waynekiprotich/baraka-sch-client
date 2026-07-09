@@ -1,0 +1,54 @@
+/* Theme variables */
+:root {
+  /* Brand colors */
+  --purple:        #5B2C90;
+  --purple-light:   #6E3CBC;
+  --purple-dark:    #3D1B65;
+  --gold:           #F4B400;
+  --gold-soft:      #FBD98A;
+  --white:          #FFFFFF;
+  --bg:             #F8F8FC;
+  --text:           #222222;
+
+  /* Accent colors */
+  --sky-blue:      #38BDF8;
+  --grass-green:   #4ADE80;
+  --coral-pink:    #F87171;
+  --sunny-yellow:  #FBBF24;
+
+  /* Derived */
+  --purple-04: rgba(91,44,144,.04);
+  --purple-08: rgba(91,44,144,.08);
+  --purple-14: rgba(91,44,144,.14);
+  --purple-60: rgba(91,44,144,.60);
+  --gold-20:   rgba(244,180,0,.2);
+  --ink-60:    rgba(34,34,34,.62);
+  --ink-40:    rgba(34,34,34,.42);
+  --line:      rgba(91,44,144,.12);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 10px rgba(61,27,101,.06);
+  --shadow-md: 0 12px 32px rgba(61,27,101,.12);
+  --shadow-lg: 0 24px 64px rgba(61,27,101,.18);
+  --shadow-gold: 0 10px 30px rgba(244,180,0,.28);
+
+  /* Radii */
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 100px;
+}
+
+[data-theme="dark"] {
+  --bg:            #14101E;
+  --white:         #1E1830;
+  --text:          #F3EEFB;
+  --ink-60:        rgba(243,238,251,.68);
+  --ink-40:        rgba(243,238,251,.44);
+  --line:          rgba(255,255,255,.1);
+  --purple-04:     rgba(255,255,255,.03);
+  --purple-08:     rgba(255,255,255,.06);
+  --purple-14:     rgba(255,255,255,.1);
+  --glass-bg:      rgba(30,24,48,.55);
+  --glass-brd:     rgba(255,255,255,.08);
+}

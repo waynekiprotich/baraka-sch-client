@@ -1,6 +1,19 @@
-@import './reset.css';
-@import './typography.css';
-@import './colors.css';
-@import './layout.css';
-@import './components.css';
-@import './utilities.css';
+</dyad-file><dyad-chat-summary>Refactored frontend CSS into modular files and updated index.css imports.</dyad-chat-summary> <div className="field"><label htmlFor="pparent">Your Name <span className="req">*</span></label><input id="pparent" required type="text" placeholder="e.g. Jane Wanjiru" value={formData.pparent} onChange={(e) => setFormData({ ...formData, pparent: e.target.value })} /></div>
+              <div className="field"><label htmlFor="pemail">Email Address <span className="req">*</span></label><input id="pemail" required type="email" placeholder="you@example.com" value={formData.pemail} onChange={(e) => setFormData({ ...formData, pemail: e.target.value })} /></div>
+              <div className="field full"><label htmlFor="pmsg">Message <span className="req">*</span></label><textarea id="pmsg" required placeholder="How can we help?" value={formData.pmsg} onChange={(e) => setFormData({ ...formData, pmsg: e.target.value })}></textarea></div>
+              <button type="submit" className="btn btn-primary btn-block" style={{ marginTop: '24px' }} disabled={submitted}>{submitted ? 'Sent — thank you!' : 'Send Message'}</button>
+            </form>
+            <p style={{ textAlign: 'center', marginTop: '14px', fontSize: '.82rem', color: 'var(--ink-40)' }}>Demo form — no data is sent in this build.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-flush">
+        <div className="container">
+          <Reveal className="section-head"><p className="eyebrow">Common Questions</p><h2>Frequently asked questions</h2></Reveal>
+          <Reveal style={{ maxWidth: '760px' }}><Accordion items={faqItems} /></Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
